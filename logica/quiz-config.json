@@ -1,25 +1,34 @@
 {
-  "versao": "0.1",
-  "arquetipos": {
-    "ESP": {"m": "O Especialista Invisível", "f": "A Especialista Invisível", "emoji": "🕶️", "oferta": "Consultoria de Autoridade"},
-    "CAC": {"m": "O Caçador Solitário", "f": "A Caçadora Solitária", "emoji": "🏹", "oferta": "Plataforma Leadhunter"},
-    "MAE": {"m": "O Maestro", "f": "A Maestra", "emoji": "🎼", "oferta": "Plataforma Leadhunter (plano para time)"},
-    "GEN": {"m": "O General sem Exército", "f": "A Rainha sem Exército", "emoji_m": "⚔️", "emoji_f": "👑", "oferta": "Serviço Completo"},
-    "REF": {"m": "O Refém da Indicação", "f": "A Refém da Indicação", "emoji": "🎲", "oferta": "Serviço Completo + Autoridade"},
-    "DESQ": {"m": "O Explorador de Outros Mares", "f": "A Exploradora de Outros Mares", "emoji": "🧭", "oferta": "Conteúdo / nutrição"}
+  "versao": "0.2",
+  "bifurcacao": {
+    "id": "Q0",
+    "pergunta": "O que te trouxe até aqui?",
+    "opcoes": {"A": "NEGOCIO", "B": "CARREIRA"}
   },
-  "perguntas": [
+  "arquetipos": {
+    "ESP": {"trilha": "NEGOCIO", "m": "O Especialista Invisível", "f": "A Especialista Invisível", "emoji": "🕶️", "oferta": "Consultoria de Autoridade"},
+    "CAC": {"trilha": "NEGOCIO", "m": "O Caçador Solitário", "f": "A Caçadora Solitária", "emoji": "🏹", "oferta": "Plataforma Leadhunter"},
+    "MAE": {"trilha": "NEGOCIO", "m": "O Maestro", "f": "A Maestra", "emoji": "🎼", "oferta": "Plataforma Leadhunter (plano para time)"},
+    "GEN": {"trilha": "NEGOCIO", "m": "O General sem Exército", "f": "A Rainha sem Exército", "emoji_m": "⚔️", "emoji_f": "👑", "oferta": "Serviço Completo"},
+    "REF": {"trilha": "NEGOCIO", "m": "O Refém da Indicação", "f": "A Refém da Indicação", "emoji": "🎲", "oferta": "Serviço Completo + Autoridade"},
+    "EXP": {"trilha": "NEGOCIO", "m": "O Explorador de Outros Mares", "f": "A Exploradora de Outros Mares", "emoji": "🧭", "oferta": "Ajuste de LinkedIn (oferta de entrada)"},
+    "TAL": {"trilha": "CARREIRA", "m": "O Talento Escondido", "f": "A Talento Escondida", "emoji": "💎", "oferta": "Currículo + LinkedIn"},
+    "FAN": {"trilha": "CARREIRA", "m": "O Candidato Fantasma", "f": "A Candidata Fantasma", "emoji": "👻", "oferta": "Currículo + LinkedIn"},
+    "FOG": {"trilha": "CARREIRA", "m": "O Foguete na Rampa", "f": "A Estrela em Ascensão", "emoji_m": "🚀", "emoji_f": "⭐", "oferta": "Currículo + LinkedIn"},
+    "VIA": {"trilha": "CARREIRA", "m": "O Viajante de Rota Nova", "f": "A Viajante de Rota Nova", "emoji": "🧳", "oferta": "Currículo + LinkedIn"}
+  },
+  "perguntas_negocio": [
     {"id": "Q1", "tema": "cargo", "opcoes": {
       "A": {"pontos": {"CAC": 2, "GEN": 1}, "decisor": true},
       "B": {"pontos": {"MAE": 2, "GEN": 1}, "decisor": true},
       "C": {"pontos": {"MAE": 3}, "decisor": true},
       "D": {"pontos": {"ESP": 2, "REF": 1}, "decisor": true},
-      "E": {"pontos": {"CAC": 2}, "decisor": false}
+      "E": {"pontos": {"CAC": 2}, "decisor": false, "flag": "CONVITE_CARREIRA"}
     }},
     {"id": "Q2", "tema": "b2b_b2c", "opcoes": {
       "A": {"pontos": {}},
       "B": {"pontos": {}},
-      "C": {"pontos": {}, "flag": "B2C"}
+      "C": {"pontos": {"ESP": 2}, "flag": "B2C"}
     }},
     {"id": "Q3", "tema": "ticket", "opcoes": {
       "A": {"pontos": {}, "flag": "TICKET_BAIXO", "score": 0},
@@ -72,20 +81,57 @@
       "D": {"pontos": {"GEN": 2, "REF": 2}, "score": 3}
     }}
   ],
-  "travas_em_ordem": [
-    "1. Q2=C (B2C) -> DESQ",
-    "2. Q3=A (ticket baixo) -> DESQ",
-    "3. autoridade <= 2 E Q9=A -> ESP (forçado)",
-    "4. BUDGET_BAIXO -> GEN e REF saem da disputa",
-    "5. TEM_TIME -> GEN sai da disputa",
-    "6. maior pontuação vence; empate: se autoridade <= 2, ESP; senão GEN > REF > MAE > CAC > ESP"
+  "perguntas_carreira": [
+    {"id": "C1", "tema": "momento", "opcoes": {
+      "A": {"pontos": {"FAN": 1, "TAL": 1}},
+      "B": {"pontos": {"FAN": 2, "FOG": 1}},
+      "C": {"pontos": {"FOG": 3}},
+      "D": {"pontos": {"VIA": 3}},
+      "E": {"pontos": {"FAN": 2, "TAL": 1}}
+    }},
+    {"id": "C2", "tema": "bagagem", "opcoes": {
+      "A": {"pontos": {"TAL": 3}},
+      "B": {"pontos": {"FAN": 1, "FOG": 1}},
+      "C": {"pontos": {"FOG": 2}},
+      "D": {"pontos": {"FOG": 2, "FAN": 1}},
+      "E": {"pontos": {"VIA": 2, "FAN": 1}}
+    }},
+    {"id": "C3", "tema": "curriculo", "opcoes": {
+      "A": {"pontos": {"FOG": 1}},
+      "B": {"pontos": {"FAN": 1, "FOG": 1}},
+      "C": {"pontos": {"TAL": 2}}
+    }},
+    {"id": "C4", "tema": "linkedin", "opcoes": {
+      "A": {"pontos": {"FOG": 1}},
+      "B": {"pontos": {"FAN": 2}},
+      "C": {"pontos": {"TAL": 2}}
+    }},
+    {"id": "C5", "tema": "trava", "opcoes": {
+      "A": {"pontos": {"FAN": 3}},
+      "B": {"pontos": {"FOG": 1, "FAN": 1}},
+      "C": {"pontos": {"TAL": 2}},
+      "D": {"pontos": {"VIA": 3}},
+      "E": {"pontos": {"FOG": 2}}
+    }}
   ],
-  "selo_autoridade": "Se autoridade <= 2 e o resultado não for ESP/DESQ, a página de resultado exibe o bloco 'Alerta de autoridade' e a análise do perfil foca nisso (upsell da Consultoria de Autoridade).",
+  "travas_negocio_em_ordem": [
+    "1. Q3=A (ticket até R$ 5 mil/ano) -> EXP (oferta de entrada)",
+    "2. Q2=C (B2C) E orçamento baixo (Q10=A/B) -> EXP",
+    "3. Q2=C (B2C) com orçamento maior -> ESP (marca pessoal)",
+    "4. autoridade <= 2 E Q9=A -> ESP",
+    "5. BUDGET_BAIXO -> GEN e REF saem da disputa",
+    "6. TEM_TIME -> GEN sai da disputa",
+    "7. maior pontuação vence; empate: se autoridade <= 2, ESP; senão GEN > REF > MAE > CAC > ESP"
+  ],
+  "desempate_carreira": "maior pontuação vence; empate: TAL > FAN > VIA > FOG",
+  "selo_autoridade": "Trilha Negócio: se autoridade <= 2 e o resultado for CAC, MAE, GEN ou REF, a página exibe o bloco 'Alerta de autoridade'.",
+  "convite_carreira": "Trilha Negócio: se Q1=E (vendedor/SDR), a página de resultado mostra um botão secundário para fazer a Trilha Carreira.",
   "temperatura_lead": {
-    "regra": "score = Q3.score + Q10.score + (decisor ? 1 : 0) + (Q9 != E ? 1 : 0)  -> 0 a 8",
-    "QUENTE": ">= 6 -> alerta imediato no WhatsApp do José",
+    "regra": "Só Trilha Negócio. score = Q3.score + Q10.score + (decisor ? 1 : 0) + (Q9 != E ? 1 : 0) -> 0 a 8",
+    "QUENTE": ">= 6 -> resposta do José no mesmo dia útil",
     "MORNO": "3 a 5 -> análise do perfil em até 48h úteis",
-    "FRIO": "<= 2 (ou DESQ) -> análise do perfil + nutrição"
+    "FRIO": "<= 2 ou EXP -> análise do perfil + nutrição",
+    "CARREIRA": "Trilha Carreira -> etiqueta própria no WhatsApp Business, atendimento por ordem de chegada"
   },
   "whatsapp": "5521969353524"
 }

@@ -1,6 +1,6 @@
-# Quiz Funnel Leadhunter — "Que tipo de caçador(a) B2B você é?"
+# Quiz Funnel Leadhunter — "Que tipo de caçador(a) você é?"
 
-Quiz que direciona o lead entre **Plataforma Leadhunter**, **Serviço Completo** e **Consultoria de Autoridade**, com resultados em arquétipos (versões masculina e feminina) e CTA para o WhatsApp do José.
+Quiz com duas trilhas. **Negócio:** direciona entre Plataforma Leadhunter, Serviço Completo, Consultoria de Autoridade e Ajuste de LinkedIn. **Carreira:** leva quem quer crescer ou conseguir um emprego melhor para Currículo + LinkedIn. Resultados em arquétipos (versões masculina e feminina) e CTA para o WhatsApp do José.
 
 ```
 quiz-funnel/
@@ -10,10 +10,12 @@ quiz-funnel/
 │   └── 02-mapa-mental.mmd         ← mesmo mapa em Mermaid (editável)
 ├── copy/
 │   ├── 01-telas-de-entrada-e-captura.md
-│   ├── 02-perguntas.md
-│   ├── 03-resultados.md
-│   ├── 04-whatsapp-e-pos-quiz.md
-│   └── 05-diagnostico-linkedin.md
+│   ├── 02-perguntas-negocio.md
+│   ├── 03-perguntas-carreira.md
+│   ├── 04-resultados-negocio.md
+│   ├── 05-resultados-carreira.md
+│   ├── 06-whatsapp-e-pos-quiz.md
+│   └── 07-diagnostico-linkedin.md
 ├── logica/
 │   ├── quiz-config.json           ← FONTE DA VERDADE dos pesos e travas
 │   ├── motor.py                   ← calcula o resultado, roda testes, gera a tabela
@@ -27,4 +29,4 @@ quiz-funnel/
 - Mudou um peso? Edite `quiz-config.json` e rode `python3 logica/motor.py` para testar e regenerar a tabela.
 
 ## Status
-v0.1 — textos base prontos para revisão. Pendências em `docs/01-framework.md`, seção 8.
+v0.2 — Trilha Carreira adicionada, ninguém é desqualificado. Pendências em `docs/01-framework.md`, seção 8.

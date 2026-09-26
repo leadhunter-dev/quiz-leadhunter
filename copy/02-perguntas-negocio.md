@@ -1,4 +1,4 @@
-# As 10 perguntas
+# Trilha Negócio — as 10 perguntas
 
 > As letras (A, B, C…) batem com `logica/quiz-config.json`. Pontuação completa em `logica/pontuacao.md`.
 > Notação `[m|f]` = forma masculina ou feminina.
@@ -11,15 +11,15 @@
 - **B)** Sou [sócio ou diretor|sócia ou diretora] e já tenho time comercial
 - **C)** Lidero o time comercial (gerente, head, coordenador[a])
 - **D)** Sou [consultor|consultora] ou especialista e vendo o meu próprio serviço
-- **E)** Sou [vendedor|vendedora] ou SDR
+- **E)** Sou [vendedor|vendedora] ou SDR *(o resultado ganha um convite para a Trilha Carreira)*
 
 ### Q2 — Quem assina o seu contrato? *(qualificação)*
 - **A)** Um CNPJ, sempre
 - **B)** Às vezes CNPJ, às vezes CPF
-- **C)** Só CPF — vendo para pessoa física
+- **C)** Só CPF — vendo para pessoa física *(não desqualifica: com orçamento maior → Especialista Invisível; com orçamento baixo → Explorador[a])*
 
 ### Q3 — Quanto vale um cliente novo para você no primeiro ano? *(investimento)*
-- **A)** Até R$ 5 mil
+- **A)** Até R$ 5 mil *(→ Explorador[a], oferta de entrada)*
 - **B)** De R$ 5 mil a R$ 30 mil
 - **C)** De R$ 30 mil a R$ 100 mil
 - **D)** Mais de R$ 100 mil

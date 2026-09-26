@@ -47,7 +47,7 @@ estão no perfil.
 
 1. Lead entra (planilha/CRM com arquétipo, temperatura e link do LinkedIn).
 2. Operação roda o prompt acima e cola o resultado no card do lead.
-3. José revisa, personaliza e envia pelo WhatsApp usando o template de `04-whatsapp-e-pos-quiz.md`.
+3. José revisa, personaliza e envia pelo WhatsApp usando o template de `06-whatsapp-e-pos-quiz.md`.
 4. Registrar: data de envio, nota de autoridade, respondeu (s/n), call agendada (s/n).
 
 > Nada sai para o lead sem a revisão do José — é o nome dele que está na promessa.

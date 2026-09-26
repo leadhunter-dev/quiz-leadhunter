@@ -1,4 +1,4 @@
-# Páginas de resultado
+# Páginas de resultado — Trilha Negócio
 
 > Notação `[m|f]` = forma masculina ou feminina. O diagnóstico é idêntico nas duas versões; só mudam linguagem, nome e visual.
 > Estrutura fixa de cada página:
@@ -9,7 +9,7 @@
 > 5. Se nada mudar…
 > 6. O caminho que a gente recomenda (a oferta)
 > 7. Bônus: análise do LinkedIn
-> 8. CTA WhatsApp (texto do botão + mensagem pré-preenchida → ver `04-whatsapp-e-pos-quiz.md`)
+> 8. CTA WhatsApp (texto do botão + mensagem pré-preenchida → ver `06-whatsapp-e-pos-quiz.md`)
 > 9. Texto de compartilhamento
 >
 > **Bloco condicional "Alerta de autoridade"** — aparece em CAC, MAE, GEN e REF quando a nota de autoridade (Q7 + Q8) for ≤ 2. Texto no fim do arquivo.
@@ -156,24 +156,35 @@ O José Henrique vai analisar o seu LinkedIn e te mostrar como transformar a sua
 
 ---
 
-## 🧭 O Explorador de Outros Mares / A Exploradora de Outros Mares *(desqualificado)*
+## 🧭 O Explorador de Outros Mares / A Exploradora de Outros Mares *(oferta de entrada)*
 
-> Aparece para quem vende só para pessoa física (Q2 = C) ou tem ticket até R$ 5 mil/ano (Q3 = A).
+> Aparece para quem tem ticket até R$ 5 mil/ano (Q3 = A) ou vende para pessoa física com orçamento de até R$ 3 mil/mês (Q2 = C e Q10 = A ou B). Ninguém é desqualificado: esse é o primeiro degrau.
 
-**Frase de efeito:** "Seu tesouro está em outro mapa."
+**Frase de efeito:** "Seu tesouro está num mapa diferente — e a vitrine vem primeiro."
 
 **Quem é você**
-Você tem vontade de crescer e não tem medo de ir atrás. Mas, pelo que você respondeu, o seu jogo é diferente: [vende para pessoa física | tem um ticket] em que prospecção ativa no LinkedIn, um a um, dificilmente se paga.
+Você tem vontade de crescer e não tem medo de ir atrás. O seu jogo é diferente do outbound B2B tradicional: [você vende para pessoa física|o seu ticket pede volume], e nesse jogo quem ganha é quem é lembrado. Antes de pensar em máquina de prospecção, o primeiro passo é ter uma vitrine que trabalhe por você.
 
-**O que a gente recomenda**
-Canais de volume costumam funcionar melhor para o seu momento: conteúdo, anúncios e parcerias. Enquanto isso, siga a Leadhunter — a gente compartilha muita coisa sobre posicionamento e vendas que serve para qualquer negócio.
+**Seu superpoder**
+Agilidade. Negócios como o seu testam, ajustam e aprendem rápido.
 
-**Botão principal:** Seguir a Leadhunter no LinkedIn →
-**Botão secundário:** Falar com o José mesmo assim
+**Seu ponto cego**
+Achar que o LinkedIn "não é para o seu tipo de negócio". É onde estão parceiros, fornecedores, indicadores e clientes com poder de compra — e quase ninguém do seu mercado usa bem.
 
-**Compartilhamento:** "Deu [Explorador|Exploradora] de Outros Mares 🧭. E você, que tipo de caçador(a) B2B é?"
+**Se nada mudar…**
+Você continua dependendo só dos canais de sempre, disputando atenção com todo mundo pelo preço.
 
-> Nota: a frase do "Quem é você" tem duas variações — usar "vende para pessoa física" se Q2 = C, ou "tem um ticket" se Q3 = A.
+**O caminho que a gente recomenda: Ajuste de LinkedIn**
+Uma repaginada objetiva no seu perfil — headline, capa, sobre e destaques — para você passar a ser [encontrado e lembrado|encontrada e lembrada]. Rápido e com um investimento que cabe no seu momento.
+
+**Bônus**
+O José Henrique vai abrir o seu perfil e te mandar no WhatsApp o que ele mudaria primeiro.
+
+**Botão:** Quero repaginar meu LinkedIn →
+
+**Compartilhamento:** "Deu [Explorador|Exploradora] de Outros Mares 🧭. E você, que tipo de caçador(a) é?"
+
+> Nota: "Quem é você" tem duas variações — "você vende para pessoa física" (Q2 = C) ou "o seu ticket pede volume" (Q3 = A).
 
 ---
 
@@ -184,3 +195,15 @@ Canais de volume costumam funcionar melhor para o seu momento: conteúdo, anúnc
 **Título:** Um alerta antes de você acelerar
 
 **Texto:** Pelas suas respostas, o seu LinkedIn ainda não sustenta a sua abordagem. Na prática, isso significa que cada convite e cada mensagem vai converter menos, porque o decisor abre o seu perfil e não encontra motivo para responder. Antes de colocar volume, vale ajustar a vitrine. A análise que o José vai te mandar começa exatamente por aqui.
+
+---
+
+## Bloco condicional — 🚀 Convite para a Trilha Carreira
+
+> Aparece quando Q1 = E (vendedor/SDR). Entra depois do CTA principal, como botão secundário.
+
+**Título:** E a sua carreira?
+
+**Texto:** Você respondeu como quem está na linha de frente. Quer descobrir também o seu arquétipo de carreira? São 5 perguntas.
+
+**Botão secundário:** Fazer a Trilha Carreira →
