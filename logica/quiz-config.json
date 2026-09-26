@@ -1,0 +1,91 @@
+{
+  "versao": "0.1",
+  "arquetipos": {
+    "ESP": {"m": "O Especialista Invisível", "f": "A Especialista Invisível", "emoji": "🕶️", "oferta": "Consultoria de Autoridade"},
+    "CAC": {"m": "O Caçador Solitário", "f": "A Caçadora Solitária", "emoji": "🏹", "oferta": "Plataforma Leadhunter"},
+    "MAE": {"m": "O Maestro", "f": "A Maestra", "emoji": "🎼", "oferta": "Plataforma Leadhunter (plano para time)"},
+    "GEN": {"m": "O General sem Exército", "f": "A Rainha sem Exército", "emoji_m": "⚔️", "emoji_f": "👑", "oferta": "Serviço Completo"},
+    "REF": {"m": "O Refém da Indicação", "f": "A Refém da Indicação", "emoji": "🎲", "oferta": "Serviço Completo + Autoridade"},
+    "DESQ": {"m": "O Explorador de Outros Mares", "f": "A Exploradora de Outros Mares", "emoji": "🧭", "oferta": "Conteúdo / nutrição"}
+  },
+  "perguntas": [
+    {"id": "Q1", "tema": "cargo", "opcoes": {
+      "A": {"pontos": {"CAC": 2, "GEN": 1}, "decisor": true},
+      "B": {"pontos": {"MAE": 2, "GEN": 1}, "decisor": true},
+      "C": {"pontos": {"MAE": 3}, "decisor": true},
+      "D": {"pontos": {"ESP": 2, "REF": 1}, "decisor": true},
+      "E": {"pontos": {"CAC": 2}, "decisor": false}
+    }},
+    {"id": "Q2", "tema": "b2b_b2c", "opcoes": {
+      "A": {"pontos": {}},
+      "B": {"pontos": {}},
+      "C": {"pontos": {}, "flag": "B2C"}
+    }},
+    {"id": "Q3", "tema": "ticket", "opcoes": {
+      "A": {"pontos": {}, "flag": "TICKET_BAIXO", "score": 0},
+      "B": {"pontos": {"CAC": 2, "ESP": 1}, "score": 1},
+      "C": {"pontos": {"GEN": 1, "MAE": 1, "REF": 1}, "score": 2},
+      "D": {"pontos": {"GEN": 2, "REF": 2}, "score": 3}
+    }},
+    {"id": "Q4", "tema": "origem_clientes", "opcoes": {
+      "A": {"pontos": {"REF": 3}},
+      "B": {"pontos": {"CAC": 2}},
+      "C": {"pontos": {"MAE": 2}},
+      "D": {"pontos": {"MAE": 1, "GEN": 1}},
+      "E": {"pontos": {"REF": 1, "GEN": 1}}
+    }},
+    {"id": "Q5", "tema": "quem_executa", "opcoes": {
+      "A": {"pontos": {"CAC": 3}},
+      "B": {"pontos": {"GEN": 3, "REF": 1}},
+      "C": {"pontos": {"MAE": 3}, "flag": "TEM_TIME"},
+      "D": {"pontos": {"REF": 2, "GEN": 1}}
+    }},
+    {"id": "Q6", "tema": "horas_semana", "opcoes": {
+      "A": {"pontos": {"GEN": 2, "REF": 2}},
+      "B": {"pontos": {"CAC": 1, "ESP": 1}},
+      "C": {"pontos": {"CAC": 2}},
+      "D": {"pontos": {"MAE": 3}, "flag": "TEM_TIME"}
+    }},
+    {"id": "Q7", "tema": "clareza_perfil", "opcoes": {
+      "A": {"pontos": {"GEN": 1, "MAE": 1}, "autoridade": 3},
+      "B": {"pontos": {"CAC": 1, "REF": 1}, "autoridade": 2},
+      "C": {"pontos": {"ESP": 3}, "autoridade": 1},
+      "D": {"pontos": {"ESP": 3}, "autoridade": 0}
+    }},
+    {"id": "Q8", "tema": "presenca_linkedin", "opcoes": {
+      "A": {"pontos": {"GEN": 1}, "autoridade": 3},
+      "B": {"pontos": {"CAC": 1}, "autoridade": 2},
+      "C": {"pontos": {"ESP": 2, "REF": 1}, "autoridade": 1},
+      "D": {"pontos": {"ESP": 2}, "autoridade": 0}
+    }},
+    {"id": "Q9", "tema": "gargalo", "opcoes": {
+      "A": {"pontos": {"ESP": 3}, "flag": "QUER_AUTORIDADE"},
+      "B": {"pontos": {"GEN": 2, "CAC": 1}},
+      "C": {"pontos": {"REF": 3}},
+      "D": {"pontos": {"MAE": 3}},
+      "E": {"pontos": {"REF": 1}, "flag": "GARGALO_FECHAMENTO"}
+    }},
+    {"id": "Q10", "tema": "orcamento", "opcoes": {
+      "A": {"pontos": {"CAC": 2, "ESP": 1}, "flag": "BUDGET_BAIXO", "score": 0},
+      "B": {"pontos": {"CAC": 2, "MAE": 1, "ESP": 1}, "flag": "BUDGET_BAIXO", "score": 1},
+      "C": {"pontos": {"GEN": 1, "REF": 1, "MAE": 1}, "score": 2},
+      "D": {"pontos": {"GEN": 2, "REF": 2}, "score": 3}
+    }}
+  ],
+  "travas_em_ordem": [
+    "1. Q2=C (B2C) -> DESQ",
+    "2. Q3=A (ticket baixo) -> DESQ",
+    "3. autoridade <= 2 E Q9=A -> ESP (forçado)",
+    "4. BUDGET_BAIXO -> GEN e REF saem da disputa",
+    "5. TEM_TIME -> GEN sai da disputa",
+    "6. maior pontuação vence; empate: se autoridade <= 2, ESP; senão GEN > REF > MAE > CAC > ESP"
+  ],
+  "selo_autoridade": "Se autoridade <= 2 e o resultado não for ESP/DESQ, a página de resultado exibe o bloco 'Alerta de autoridade' e a análise do perfil foca nisso (upsell da Consultoria de Autoridade).",
+  "temperatura_lead": {
+    "regra": "score = Q3.score + Q10.score + (decisor ? 1 : 0) + (Q9 != E ? 1 : 0)  -> 0 a 8",
+    "QUENTE": ">= 6 -> alerta imediato no WhatsApp do José",
+    "MORNO": "3 a 5 -> análise do perfil em até 48h úteis",
+    "FRIO": "<= 2 (ou DESQ) -> análise do perfil + nutrição"
+  },
+  "whatsapp": "5521969353524"
+}

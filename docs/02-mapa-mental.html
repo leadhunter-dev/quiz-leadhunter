@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mapa Mental — Quiz Leadhunter</title>
+<style>
+:root{--bg:#f6f8fb;--card:#fff;--ink:#14213d;--muted:#5b6478;--line:#c9d2e3;
+--c1:#2563eb;--c2:#7c3aed;--c3:#0891b2;--c4:#db2777;--c5:#16a34a;--c6:#ea580c;--c7:#475569}
+@media (prefers-color-scheme:dark){:root{--bg:#0e1320;--card:#161d2e;--ink:#e6ebf5;--muted:#9aa4ba;--line:#2e3a55}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.4 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}
+header{padding:24px 16px 8px;max-width:1400px;margin:auto}
+h1{margin:0;font-size:22px}
+header p{margin:6px 0 0;color:var(--muted)}
+.wrap{overflow-x:auto;padding:16px}
+.tree{display:flex;align-items:center;min-width:1180px;max-width:1400px;margin:auto}
+.root{flex:0 0 190px;background:var(--c1);color:#fff;border-radius:16px;padding:18px;font-weight:700;font-size:16px;text-align:center;box-shadow:0 4px 18px rgba(37,99,235,.3)}
+.root small{display:block;font-weight:400;opacity:.85;margin-top:6px;font-size:12px}
+ul{list-style:none;margin:0;padding:0 0 0 28px;position:relative}
+.tree>ul{padding-left:36px}
+li{position:relative;padding:5px 0 5px 22px;display:flex;align-items:center}
+li::before{content:"";position:absolute;left:0;top:50%;width:22px;border-top:2px solid var(--line)}
+li::after{content:"";position:absolute;left:0;top:0;bottom:0;border-left:2px solid var(--line)}
+li:first-child::after{top:50%}
+li:last-child::after{bottom:50%}
+li:only-child::after{display:none}
+.tree>ul::before{content:"";position:absolute;left:0;top:50%;width:36px;border-top:2px solid var(--line)}
+.n{background:var(--card);border:2px solid var(--k,var(--line));border-radius:10px;padding:7px 11px;white-space:nowrap;flex:0 0 auto}
+.b{font-weight:700;color:var(--k)}
+.n em{font-style:normal;color:var(--muted);font-size:12px;display:block}
+.k1{--k:var(--c1)}.k2{--k:var(--c2)}.k3{--k:var(--c3)}.k4{--k:var(--c4)}.k5{--k:var(--c5)}.k6{--k:var(--c6)}.k7{--k:var(--c7)}
+</style>
+</head>
+<body>
+<header>
+<h1>Mapa mental — Quiz Funnel Leadhunter</h1>
+<p>“Que tipo de caçador(a) B2B você é?” · v0.1 · fonte da verdade: logica/quiz-config.json</p>
+</header>
+<div class="wrap"><div class="tree">
+<div class="root">Quiz Funnel Leadhunter<small>Software · Serviço · Autoridade</small></div>
+<ul>
+ <li class="k1"><div class="n b">1. Entrada</div>
+  <ul>
+   <li><div class="n">Landing<em>“Que tipo de caçador(a) B2B você é?”</em></div></li>
+   <li><div class="n">Caçador ou Caçadora?<em>define linguagem M/F</em></div></li>
+   <li><div class="n">Bônus<em>análise do LinkedIn pelo José</em></div></li>
+  </ul></li>
+ <li class="k2"><div class="n b">2. Perguntas (10)</div>
+  <ul>
+   <li><div class="n">Execução<em>Q1 cargo · Q4 origem · Q5 quem faz · Q6 horas</em></div></li>
+   <li><div class="n">Investimento<em>Q3 ticket · Q10 orçamento</em></div></li>
+   <li><div class="n">Autoridade<em>Q7 clareza do perfil · Q8 presença</em></div></li>
+   <li><div class="n">Qualificação<em>Q2 B2B/B2C · Q9 gargalo</em></div></li>
+  </ul></li>
+ <li class="k3"><div class="n b">3. Captura</div>
+  <ul>
+   <li><div class="n">Nome · WhatsApp · e-mail</div></li>
+   <li><div class="n">Link do LinkedIn<em>sem link, sem análise</em></div></li>
+  </ul></li>
+ <li class="k4"><div class="n b">4. Motor</div>
+  <ul>
+   <li><div class="n">Pontos por arquétipo<em>estilo BuzzFeed</em></div></li>
+   <li><div class="n">Travas<em>B2C/ticket baixo → Explorador · aut ≤2 + referência → ESP<br>budget baixo tira GEN/REF · tem time tira GEN</em></div></li>
+   <li><div class="n">Alerta de autoridade<em>aut ≤2 em qualquer resultado</em></div></li>
+   <li><div class="n">Temperatura<em>quente · morno · frio</em></div></li>
+  </ul></li>
+ <li class="k5"><div class="n b">5. Resultados</div>
+  <ul>
+   <li><div class="n">🕶️ Especialista Invisível<em>→ Consultoria de Autoridade</em></div></li>
+   <li><div class="n">🏹 Caçador(a) Solitário(a)<em>→ Plataforma Leadhunter</em></div></li>
+   <li><div class="n">🎼 Maestro / Maestra<em>→ Plataforma para times</em></div></li>
+   <li><div class="n">⚔️ General / 👑 Rainha sem Exército<em>→ Serviço Completo</em></div></li>
+   <li><div class="n">🎲 Refém da Indicação<em>→ Serviço Completo + Autoridade</em></div></li>
+   <li><div class="n">🧭 Explorador(a) de Outros Mares<em>→ conteúdo / nutrição</em></div></li>
+  </ul></li>
+ <li class="k6"><div class="n b">6. Pós-quiz</div>
+  <ul>
+   <li><div class="n">WhatsApp pré-preenchido<em>1 mensagem por arquétipo</em></div></li>
+   <li><div class="n">Análise do LinkedIn<em>nota de autoridade /18 · até 48h úteis</em></div></li>
+   <li><div class="n">Call de 20 min → proposta</div></li>
+   <li><div class="n">Follow-up<em>D+0 e-mail · D+2 análise · D+5 · D+10</em></div></li>
+  </ul></li>
+ <li class="k7"><div class="n b">7. Tráfego & métricas</div>
+  <ul>
+   <li><div class="n">Canais<em>Meta Ads founder-led · LinkedIn · outbound · eventos</em></div></li>
+   <li><div class="n">Funil<em>início · conclusão · captura · clique WhatsApp · call</em></div></li>
+  </ul></li>
+</ul>
+</div></div>
+</body>
+</html>
