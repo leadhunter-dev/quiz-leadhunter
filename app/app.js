@@ -64,7 +64,8 @@ function calcularNegocio(r) {
   else if (autoridade <= 2 && flags.has("QUER_AUTORIDADE")) resultado = "ESP";
   else {
     const cand = new Set(DES_N);
-    if (flags.has("BUDGET_BAIXO")) { cand.delete("GEN"); cand.delete("REF"); }
+    // Corte do Serviço Completo: R$ 100 mil+/mês E time de vendas mínimo
+    if (!(flags.has("FAT_100K") && flags.has("TIME_MINIMO"))) { cand.delete("GEN"); cand.delete("REF"); }
     if (flags.has("TEM_TIME")) cand.delete("GEN");
     const melhor = Math.max(...[...cand].map((c) => pontos[c]));
     const emp = DES_N.filter((c) => cand.has(c) && pontos[c] === melhor);

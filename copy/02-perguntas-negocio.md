@@ -2,7 +2,7 @@
 
 > As letras (A, B, C…) batem com `logica/quiz-config.json`. Pontuação completa em `logica/pontuacao.md`.
 > Notação `[m|f]` = forma masculina ou feminina.
-> Eixos: **Execução** (quem prospecta) · **Investimento** (ticket e orçamento) · **Autoridade** (perfil) · **Qualificação** (B2B, gargalo).
+> Eixos: **Execução** (quem prospecta) · **Estrutura comercial** (quem fecha) · **Investimento** (ticket e faturamento) · **Autoridade** (perfil) · **Qualificação** (B2B, gargalo).
 
 ---
 
@@ -37,11 +37,11 @@
 - **C)** Meu time
 - **D)** Ninguém. Aqui a gente não prospecta
 
-### Q6 — Quantas horas por semana você dedica a gerar novos clientes? *(execução)*
-- **A)** Menos de 2 horas
-- **B)** De 2 a 5 horas
-- **C)** De 5 a 10 horas
-- **D)** Tenho gente dedicada a isso em tempo integral
+### Q6 — Quem atende as reuniões e fecha as vendas hoje? *(eixo: estrutura comercial)*
+- **A)** Só eu
+- **B)** Eu e mais 1 ou 2 pessoas
+- **C)** Um time comercial, com alguém liderando
+- **D)** Ainda não tenho um processo de vendas definido
 
 ### Q7 — Um decisor abre seu LinkedIn agora. Em 5 segundos ele entende o que você resolve e para quem? *(autoridade)*
 - **A)** Na hora. Meu perfil é uma vitrine
@@ -62,12 +62,16 @@
 - **D)** Fazer meu time produzir mais
 - **E)** Fechar as reuniões que eu já tenho
 
-### Q10 — Quanto você investiria por mês para ter uma máquina de novos clientes rodando? *(investimento)*
-- **A)** Até R$ 1 mil
-- **B)** De R$ 1 mil a R$ 3 mil
-- **C)** De R$ 3 mil a R$ 8 mil
-- **D)** Mais de R$ 8 mil
+### Q10 — Quanto o seu negócio fatura por mês hoje? *(investimento)*
+- **A)** Ainda não faturo, estou validando um produto
+- **B)** Até R$ 3 mil
+- **C)** De R$ 3 mil a R$ 10 mil
+- **D)** De R$ 10 mil a R$ 50 mil
+- **E)** De R$ 50 mil a R$ 100 mil
+- **F)** Mais de R$ 100 mil
 
 ---
 
-> ⚠️ **A VALIDAR:** as faixas da Q3 e da Q10 são provisórias. Elas precisam ser calibradas com a tabela de preços real da Plataforma, do Serviço Completo e da Consultoria de Autoridade — a regra é: quem marca A ou B na Q10 não comporta o Serviço Completo.
+> **Corte do Serviço Completo (R$ 3.800 a R$ 6.000/mês):** o resultado General/Rainha ou Refém só aparece para quem fatura **mais de R$ 100 mil/mês (Q10 = F)** e tem **time de vendas mínimo (Q6 = B ou C)**. Abaixo disso o time comercial costuma ser imaturo e a operação fica arriscada e cara; o caminho é a Plataforma (R$ 500/mês).
+> **Exceção (fora do quiz):** produto MUITO vendável no LinkedIn e demanda muito forte → o José pode oferecer o Serviço Completo na conversa.
+> ⚠️ **A VALIDAR:** as faixas de ticket da Q3.

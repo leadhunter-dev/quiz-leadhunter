@@ -1,7 +1,7 @@
 // GERADO por app/build.py — não edite à mão. Edite copy/ e logica/ e rode o build.
 window.QUIZ = {
  "config": {
-  "versao": "0.2",
+  "versao": "0.3",
   "bifurcacao": {
    "id": "Q0",
    "pergunta": "O que te trouxe até aqui?",
@@ -240,30 +240,32 @@ window.QUIZ = {
    },
    {
     "id": "Q6",
-    "tema": "horas_semana",
+    "tema": "quem_fecha",
     "opcoes": {
      "A": {
-      "pontos": {
-       "GEN": 2,
-       "REF": 2
-      }
-     },
-     "B": {
-      "pontos": {
-       "CAC": 1,
-       "ESP": 1
-      }
-     },
-     "C": {
       "pontos": {
        "CAC": 2
       }
      },
+     "B": {
+      "pontos": {
+       "GEN": 2,
+       "REF": 1
+      },
+      "flag": "TIME_MINIMO"
+     },
+     "C": {
+      "pontos": {
+       "MAE": 2,
+       "GEN": 1
+      },
+      "flag": "TIME_MINIMO"
+     },
      "D": {
       "pontos": {
-       "MAE": 3
-      },
-      "flag": "TEM_TIME"
+       "ESP": 1,
+       "CAC": 1
+      }
      }
     }
    },
@@ -366,7 +368,7 @@ window.QUIZ = {
    },
    {
     "id": "Q10",
-    "tema": "orcamento",
+    "tema": "faturamento_mensal",
     "opcoes": {
      "A": {
       "pontos": {
@@ -379,25 +381,41 @@ window.QUIZ = {
      "B": {
       "pontos": {
        "CAC": 2,
-       "MAE": 1,
+       "ESP": 1
+      },
+      "flag": "BUDGET_BAIXO",
+      "score": 0
+     },
+     "C": {
+      "pontos": {
+       "CAC": 2,
        "ESP": 1
       },
       "flag": "BUDGET_BAIXO",
       "score": 1
      },
-     "C": {
+     "D": {
       "pontos": {
-       "GEN": 1,
-       "REF": 1,
+       "CAC": 2,
        "MAE": 1
+      },
+      "score": 1
+     },
+     "E": {
+      "pontos": {
+       "MAE": 1,
+       "GEN": 1,
+       "REF": 1
       },
       "score": 2
      },
-     "D": {
+     "F": {
       "pontos": {
        "GEN": 2,
-       "REF": 2
+       "REF": 2,
+       "MAE": 1
       },
+      "flag": "FAT_100K",
       "score": 3
      }
     }
@@ -550,11 +568,11 @@ window.QUIZ = {
   ],
   "travas_negocio_em_ordem": [
    "1. Q3=A (ticket até R$ 5 mil/ano) -> EXP (oferta de entrada)",
-   "2. Q2=C (B2C) E orçamento baixo (Q10=A/B) -> EXP",
-   "3. Q2=C (B2C) com orçamento maior -> ESP (marca pessoal)",
+   "2. Q2=C (B2C) E faturamento até R$ 10 mil/mês (Q10=A/B/C) -> EXP",
+   "3. Q2=C (B2C) com faturamento maior -> ESP (marca pessoal)",
    "4. autoridade <= 2 E Q9=A -> ESP",
-   "5. BUDGET_BAIXO -> GEN e REF saem da disputa",
-   "6. TEM_TIME -> GEN sai da disputa",
+   "5. Corte do Serviço Completo: só fica na disputa GEN/REF quem fatura R$ 100 mil+/mês (Q10=F) E tem time de vendas mínimo (Q6=B/C). Senão GEN e REF saem.",
+   "6. TEM_TIME (Q5=C, time já prospecta) -> GEN sai da disputa",
    "7. maior pontuação vence; empate: se autoridade <= 2, ESP; senão GEN > REF > MAE > CAC > ESP"
   ],
   "desempate_carreira": "maior pontuação vence; empate: TAL > FAN > VIA > FOG",
@@ -567,7 +585,15 @@ window.QUIZ = {
    "FRIO": "<= 2 ou EXP -> análise do perfil + nutrição",
    "CARREIRA": "Trilha Carreira -> etiqueta própria no WhatsApp Business, atendimento por ordem de chegada"
   },
-  "whatsapp": "5521969353524"
+  "whatsapp": "5521969353524",
+  "excecao_servico": "Fora do quiz: se o produto for MUITO vendável no LinkedIn e a demanda for muito forte, o José pode oferecer o Serviço Completo na conversa mesmo abaixo do corte.",
+  "precos": {
+   "Plataforma Leadhunter": "R$ 500/mês",
+   "Serviço Completo": "R$ 3.800 a R$ 6.000/mês",
+   "Consultoria de Autoridade": "a definir",
+   "Ajuste de LinkedIn": "a definir",
+   "Currículo + LinkedIn": "a validar no WhatsApp"
+  }
  },
  "perguntasNegocio": [
   {
@@ -686,23 +712,23 @@ window.QUIZ = {
   },
   {
    "id": "Q6",
-   "titulo": "Quantas horas por semana você dedica a gerar novos clientes?",
+   "titulo": "Quem atende as reuniões e fecha as vendas hoje?",
    "opcoes": [
     {
      "valor": "A",
-     "texto": "Menos de 2 horas"
+     "texto": "Só eu"
     },
     {
      "valor": "B",
-     "texto": "De 2 a 5 horas"
+     "texto": "Eu e mais 1 ou 2 pessoas"
     },
     {
      "valor": "C",
-     "texto": "De 5 a 10 horas"
+     "texto": "Um time comercial, com alguém liderando"
     },
     {
      "valor": "D",
-     "texto": "Tenho gente dedicada a isso em tempo integral"
+     "texto": "Ainda não tenho um processo de vendas definido"
     }
    ]
   },
@@ -778,23 +804,31 @@ window.QUIZ = {
   },
   {
    "id": "Q10",
-   "titulo": "Quanto você investiria por mês para ter uma máquina de novos clientes rodando?",
+   "titulo": "Quanto o seu negócio fatura por mês hoje?",
    "opcoes": [
     {
      "valor": "A",
-     "texto": "Até R$ 1 mil"
+     "texto": "Ainda não faturo, estou validando um produto"
     },
     {
      "valor": "B",
-     "texto": "De R$ 1 mil a R$ 3 mil"
+     "texto": "Até R$ 3 mil"
     },
     {
      "valor": "C",
-     "texto": "De R$ 3 mil a R$ 8 mil"
+     "texto": "De R$ 3 mil a R$ 10 mil"
     },
     {
      "valor": "D",
-     "texto": "Mais de R$ 8 mil"
+     "texto": "De R$ 10 mil a R$ 50 mil"
+    },
+    {
+     "valor": "E",
+     "texto": "De R$ 50 mil a R$ 100 mil"
+    },
+    {
+     "valor": "F",
+     "texto": "Mais de R$ 100 mil"
     }
    ]
   }

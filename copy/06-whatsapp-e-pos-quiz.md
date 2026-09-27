@@ -117,6 +117,8 @@ Sua nota de autoridade hoje: [X]/18 (explico o critério se quiser).
 Faz sentido a gente conversar 20 minutos essa semana?
 ```
 
+> **Exceção do Serviço Completo:** se o lead caiu em Caçador(a), Maestro/Maestra ou Especialista, mas o produto é MUITO vendável no LinkedIn e a demanda é muito forte, você pode oferecer o Serviço Completo mesmo abaixo de R$ 100 mil/mês. Se não, o caminho é a Plataforma (R$ 500/mês).
+
 ### Pontes por arquétipo (a frase que liga a análise à oferta)
 
 - **Especialista Invisível:** "Esses ajustes são o começo. Na Consultoria de Autoridade a gente reposiciona o perfil inteiro para falar com quem compra de você — e aí sim a prospecção passa a render."

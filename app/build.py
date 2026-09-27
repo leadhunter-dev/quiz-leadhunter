@@ -19,7 +19,7 @@ def perguntas(arquivo, prefixo):
             atual = {"id": m.group(1), "titulo": NOTA.sub("", m.group(2)).strip(), "opcoes": []}
             out.append(atual)
             continue
-        m = re.match(r"^- \*\*([A-E])\)\*\* (.+)$", linha)
+        m = re.match(r"^- \*\*([A-F])\)\*\* (.+)$", linha)
         if m and atual:
             atual["opcoes"].append({"valor": m.group(1), "texto": NOTA.sub("", m.group(2)).strip()})
     return out

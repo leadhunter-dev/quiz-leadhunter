@@ -1,4 +1,4 @@
-"""Motor de resultado do quiz Leadhunter (v0.2 — duas trilhas).
+"""Motor de resultado do quiz Leadhunter (v0.3 — duas trilhas, corte do Serviço Completo).
 Uso: python3 motor.py  -> roda casos-teste + simulação e gera pontuacao.md
 Fonte da verdade: quiz-config.json (mude pesos lá, não aqui)."""
 import json, random, collections, pathlib
@@ -46,8 +46,8 @@ def calcular_negocio(respostas):
         resultado = "ESP"
     else:
         cand = set(DESEMPATE_N)
-        if "BUDGET_BAIXO" in flags:
-            cand -= {"GEN", "REF"}
+        if not ("FAT_100K" in flags and "TIME_MINIMO" in flags):
+            cand -= {"GEN", "REF"}  # corte do Serviço Completo
         if "TEM_TIME" in flags:
             cand -= {"GEN"}
         melhor = max(pontos[c] for c in cand)
@@ -68,14 +68,17 @@ def calcular(q0, respostas):
 
 N = lambda **k: k
 CASOS = [
-    ("N: consultor, perfil abandonado, quer referência", "A", N(Q1="D", Q2="A", Q3="C", Q4="A", Q5="B", Q6="A", Q7="D", Q8="C", Q9="A", Q10="C"), "ESP"),
-    ("N: founder mão na massa, budget baixo", "A", N(Q1="A", Q2="A", Q3="B", Q4="B", Q5="A", Q6="C", Q7="B", Q8="B", Q9="B", Q10="B"), "CAC"),
-    ("N: head comercial com SDRs", "A", N(Q1="C", Q2="A", Q3="C", Q4="C", Q5="C", Q6="D", Q7="A", Q8="B", Q9="D", Q10="C"), "MAE"),
-    ("N: CEO sem tempo, ticket e budget altos", "A", N(Q1="A", Q2="A", Q3="D", Q4="E", Q5="B", Q6="A", Q7="A", Q8="A", Q9="B", Q10="D"), "GEN"),
-    ("N: vive de indicação", "A", N(Q1="D", Q2="A", Q3="D", Q4="A", Q5="D", Q6="A", Q7="B", Q8="C", Q9="C", Q10="D"), "REF"),
-    ("N: B2C ticket alto, budget alto (imóveis de luxo)", "A", N(Q1="A", Q2="C", Q3="D", Q4="A", Q5="B", Q6="A", Q7="B", Q8="C", Q9="B", Q10="D"), "ESP"),
-    ("N: B2C com budget baixo", "A", N(Q1="A", Q2="C", Q3="B", Q4="A", Q5="A", Q6="B", Q7="C", Q8="C", Q9="B", Q10="A"), "EXP"),
-    ("N: ticket baixo", "A", N(Q1="A", Q2="A", Q3="A", Q4="B", Q5="A", Q6="C", Q7="B", Q8="B", Q9="B", Q10="A"), "EXP"),
+    ("N: consultor, perfil abandonado, quer referência", "A", N(Q1="D", Q2="A", Q3="C", Q4="A", Q5="B", Q6="A", Q7="D", Q8="C", Q9="A", Q10="D"), "ESP"),
+    ("N: founder mão na massa, fatura pouco", "A", N(Q1="A", Q2="A", Q3="B", Q4="B", Q5="A", Q6="A", Q7="B", Q8="B", Q9="B", Q10="C"), "CAC"),
+    ("N: head comercial com SDRs", "A", N(Q1="C", Q2="A", Q3="C", Q4="C", Q5="C", Q6="C", Q7="A", Q8="B", Q9="D", Q10="E"), "MAE"),
+    ("N: CEO sem tempo, 100k+/mês, tem quem feche", "A", N(Q1="B", Q2="A", Q3="D", Q4="E", Q5="B", Q6="B", Q7="A", Q8="A", Q9="B", Q10="F"), "GEN"),
+    ("N: vive de indicação, 100k+/mês, time mínimo", "A", N(Q1="D", Q2="A", Q3="D", Q4="A", Q5="D", Q6="B", Q7="B", Q8="C", Q9="C", Q10="F"), "REF"),
+    ("N: perfil de General mas fatura 50-100k -> Plataforma", "A", N(Q1="A", Q2="A", Q3="D", Q4="E", Q5="B", Q6="B", Q7="A", Q8="A", Q9="B", Q10="E"), "CAC"),
+    ("N: 100k+/mês mas só o dono vende -> sem Serviço", "A", N(Q1="A", Q2="A", Q3="D", Q4="E", Q5="B", Q6="A", Q7="A", Q8="A", Q9="B", Q10="F"), None),
+    ("N: B2C ticket alto, faturamento alto", "A", N(Q1="A", Q2="C", Q3="D", Q4="A", Q5="B", Q6="B", Q7="B", Q8="C", Q9="B", Q10="F"), "ESP"),
+    ("N: B2C faturando pouco", "A", N(Q1="A", Q2="C", Q3="B", Q4="A", Q5="A", Q6="A", Q7="C", Q8="C", Q9="B", Q10="B"), "EXP"),
+    ("N: ainda não fatura, validando produto", "A", N(Q1="A", Q2="A", Q3="B", Q4="E", Q5="A", Q6="D", Q7="B", Q8="B", Q9="B", Q10="A"), "CAC"),
+    ("N: ticket baixo", "A", N(Q1="A", Q2="A", Q3="A", Q4="B", Q5="A", Q6="A", Q7="B", Q8="B", Q9="B", Q10="C"), "EXP"),
     ("C: vendedor de loja sem LinkedIn", "B", N(C1="B", C2="A", C3="C", C4="C", C5="C"), "TAL"),
     ("C: manda currículo e ninguém chama", "B", N(C1="B", C2="B", C3="B", C4="B", C5="A"), "FAN"),
     ("C: quer promoção onde está", "B", N(C1="C", C2="C", C3="A", C4="A", C5="E"), "FOG"),
@@ -114,7 +117,7 @@ if __name__ == "__main__":
     print("== Casos-teste ==")
     for nome, q0, resp, esp in CASOS:
         r = calcular(q0, resp)
-        ok = r["resultado"] == esp
+        ok = r["resultado"] == esp if esp else r["resultado"] not in ("GEN", "REF")
         falhas += not ok
         print(f"{'OK ' if ok else 'ERRO'} {nome}: {r['resultado']} ({r['temperatura']})")
     random.seed(1)

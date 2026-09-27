@@ -1,17 +1,17 @@
-# Framework — Quiz Funnel Leadhunter (v0.2)
+# Framework — Quiz Funnel Leadhunter (v0.3)
 
 **Objetivo:** transformar visitantes em conversas no WhatsApp do José já com o direcionamento certo. Ninguém é desqualificado: cada pessoa cai na oferta que faz sentido para o momento dela.
 
 **Nome do quiz:** Que tipo de caçador(a) você é?
 
 **Ofertas**
-| Oferta | Para quem | Status |
-|---|---|---|
-| Serviço Completo | Negócio com ticket e orçamento altos | Ativa |
-| Plataforma Leadhunter | Negócio que prospecta com time próprio ou sozinho | Ativa |
-| Consultoria de Autoridade | Negócio cujo perfil não sustenta a venda | A criar |
-| Ajuste de LinkedIn (entrada) | Negócio B2C ou de ticket baixo | A criar |
-| Currículo + LinkedIn | Pessoas querendo crescer na carreira ou conseguir emprego | A validar no WhatsApp |
+| Oferta | Para quem | Preço | Status |
+|---|---|---|---|
+| Serviço Completo | Fatura R$ 100 mil+/mês e tem time de vendas mínimo | R$ 3.800 a R$ 6.000/mês | Ativa |
+| Plataforma Leadhunter | Negócio que prospecta sozinho ou com time próprio | R$ 500/mês | Ativa |
+| Consultoria de Autoridade | Negócio cujo perfil não sustenta a venda | a definir | A criar |
+| Ajuste de LinkedIn (entrada) | Negócio B2C ou de ticket baixo | a definir | A criar |
+| Currículo + LinkedIn | Pessoas querendo crescer na carreira ou conseguir emprego | a validar | A validar no WhatsApp |
 
 ---
 
@@ -28,8 +28,9 @@ Tráfego → Landing → Caçador ou Caçadora? → O que te trouxe até aqui?
 **Eixos**
 | Eixo | Perguntas | O que mede |
 |---|---|---|
-| Execução | Q1, Q4, Q5, Q6 | Quem prospecta e quanto tempo existe para isso |
-| Investimento | Q3, Q10 | Ticket do cliente e orçamento mensal |
+| Execução | Q1, Q4, Q5 | Quem prospecta hoje |
+| Estrutura comercial | Q6 | Quem atende as reuniões e fecha (time de vendas mínimo?) |
+| Investimento | Q3, Q10 | Ticket do cliente e faturamento mensal |
 | Autoridade | Q7, Q8 | Se o LinkedIn sustenta a abordagem (nota 0 a 6) |
 | Contexto | Q2, Q9 | B2B ou B2C e qual é o gargalo real |
 
@@ -45,12 +46,14 @@ Tráfego → Landing → Caçador ou Caçadora? → O que te trouxe até aqui?
 
 **Travas (nesta ordem, passam por cima dos pontos)**
 1. Ticket até R$ 5 mil/ano (Q3 = A) → Explorador(a)
-2. B2C (Q2 = C) com orçamento até R$ 3 mil/mês → Explorador(a)
-3. B2C com orçamento maior → Especialista Invisível (marca pessoal)
+2. B2C (Q2 = C) faturando até R$ 10 mil/mês → Explorador(a)
+3. B2C faturando mais → Especialista Invisível (marca pessoal)
 4. Autoridade ≤ 2 **e** gargalo "ser visto como referência" → Especialista Invisível
-5. Orçamento até R$ 3 mil/mês → General/Rainha e Refém saem da disputa
-6. Tem time dedicado → General/Rainha sai da disputa
+5. **Corte do Serviço Completo:** General/Rainha e Refém só entram na disputa se o negócio fatura **R$ 100 mil+/mês (Q10 = F)** e tem **time de vendas mínimo (Q6 = B ou C)**. Abaixo disso o time comercial costuma ser imaturo e a operação fica arriscada e cara → Plataforma.
+6. O time já prospecta (Q5 = C) → General/Rainha sai da disputa
 7. Maior pontuação vence (desempate: autoridade ≤ 2 favorece Especialista; senão General > Refém > Maestro > Caçador)
+
+**Exceção (decisão do José na conversa, fora do quiz):** produto MUITO vendável no LinkedIn e demanda muito forte → pode oferecer o Serviço Completo mesmo abaixo do corte.
 
 **Blocos condicionais:** Alerta de autoridade (autoridade ≤ 2 em CAC/MAE/GEN/REF) · Convite para a Trilha Carreira (Q1 = vendedor/SDR).
 
@@ -103,6 +106,7 @@ Tudo cai no WhatsApp do José, sem link de pagamento. Para aguentar o volume do 
 - [ ] Preço e escopo de **Currículo + LinkedIn** (validar nas primeiras conversas)
 - [ ] Link da página de conteúdo sobre carreira
 - [ ] Preço e escopo da Consultoria de Autoridade e do Ajuste de LinkedIn
-- [ ] Calibrar faixas de ticket (Q3) e orçamento (Q10) com a tabela de preços real
+- [ ] Calibrar faixas de ticket (Q3)
+- [x] Q10 virou faturamento mensal; corte do Serviço Completo definido (R$ 100 mil+/mês + time mínimo)
 - [ ] Confirmar o número de WhatsApp
 - [ ] Onde registrar os leads (Notion, planilha ou CRM)

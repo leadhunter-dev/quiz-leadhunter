@@ -30,10 +30,10 @@ Carreira: TAL Talento Escondido(a) · FAN Candidato(a) Fantasma · FOG Foguete n
 | Q5 (quem_executa) | B | 3 | 1 |  |  |  |  |  |
 | Q5 (quem_executa) | C |  |  | 3 |  |  |  | TEM_TIME |
 | Q5 (quem_executa) | D | 1 | 2 |  |  |  |  |  |
-| Q6 (horas_semana) | A | 2 | 2 |  |  |  |  |  |
-| Q6 (horas_semana) | B |  |  |  | 1 | 1 |  |  |
-| Q6 (horas_semana) | C |  |  |  | 2 |  |  |  |
-| Q6 (horas_semana) | D |  |  | 3 |  |  |  | TEM_TIME |
+| Q6 (quem_fecha) | A |  |  |  | 2 |  |  |  |
+| Q6 (quem_fecha) | B | 2 | 1 |  |  |  |  | TIME_MINIMO |
+| Q6 (quem_fecha) | C | 1 |  | 2 |  |  |  | TIME_MINIMO |
+| Q6 (quem_fecha) | D |  |  |  | 1 | 1 |  |  |
 | Q7 (clareza_perfil) | A | 1 |  | 1 |  |  | 3 |  |
 | Q7 (clareza_perfil) | B |  | 1 |  | 1 |  | 2 |  |
 | Q7 (clareza_perfil) | C |  |  |  |  | 3 | 1 |  |
@@ -47,19 +47,21 @@ Carreira: TAL Talento Escondido(a) · FAN Candidato(a) Fantasma · FOG Foguete n
 | Q9 (gargalo) | C |  | 3 |  |  |  |  |  |
 | Q9 (gargalo) | D |  |  | 3 |  |  |  |  |
 | Q9 (gargalo) | E |  | 1 |  |  |  |  | GARGALO_FECHAMENTO |
-| Q10 (orcamento) | A |  |  |  | 2 | 1 |  | BUDGET_BAIXO |
-| Q10 (orcamento) | B |  |  | 1 | 2 | 1 |  | BUDGET_BAIXO |
-| Q10 (orcamento) | C | 1 | 1 | 1 |  |  |  |  |
-| Q10 (orcamento) | D | 2 | 2 |  |  |  |  |  |
+| Q10 (faturamento_mensal) | A |  |  |  | 2 | 1 |  | BUDGET_BAIXO |
+| Q10 (faturamento_mensal) | B |  |  |  | 2 | 1 |  | BUDGET_BAIXO |
+| Q10 (faturamento_mensal) | C |  |  |  | 2 | 1 |  | BUDGET_BAIXO |
+| Q10 (faturamento_mensal) | D |  |  | 1 | 2 |  |  |  |
+| Q10 (faturamento_mensal) | E | 1 | 1 | 1 |  |  |  |  |
+| Q10 (faturamento_mensal) | F | 2 | 2 | 1 |  |  |  | FAT_100K |
 
 ### Travas (nesta ordem)
 
 - 1. Q3=A (ticket até R$ 5 mil/ano) -> EXP (oferta de entrada)
-- 2. Q2=C (B2C) E orçamento baixo (Q10=A/B) -> EXP
-- 3. Q2=C (B2C) com orçamento maior -> ESP (marca pessoal)
+- 2. Q2=C (B2C) E faturamento até R$ 10 mil/mês (Q10=A/B/C) -> EXP
+- 3. Q2=C (B2C) com faturamento maior -> ESP (marca pessoal)
 - 4. autoridade <= 2 E Q9=A -> ESP
-- 5. BUDGET_BAIXO -> GEN e REF saem da disputa
-- 6. TEM_TIME -> GEN sai da disputa
+- 5. Corte do Serviço Completo: só fica na disputa GEN/REF quem fatura R$ 100 mil+/mês (Q10=F) E tem time de vendas mínimo (Q6=B/C). Senão GEN e REF saem.
+- 6. TEM_TIME (Q5=C, time já prospecta) -> GEN sai da disputa
 - 7. maior pontuação vence; empate: se autoridade <= 2, ESP; senão GEN > REF > MAE > CAC > ESP
 
 ## Trilha Carreira
