@@ -21,7 +21,8 @@ quiz-funnel/
 │   ├── motor.py                   ← calcula o resultado, roda testes, gera a tabela
 │   └── pontuacao.md               ← tabela gerada automaticamente
 ├── handoff/
-│   └── brief-design.md            ← instruções para o agente de design (passo 2)
+│   ├── PRD.md                     ← requisitos completos para o agente de design
+│   └── brief-design.md            ← resumo curto
 └── app/                           ← QUIZ FUNCIONANDO (abrir app/index.html) — ver app/README.md
 ```
 

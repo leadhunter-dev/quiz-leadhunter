@@ -2,6 +2,8 @@
 
 Use o design system da Leadhunter para transformar este repositório em um quiz em HTML hospedável.
 
+> **Documento principal: `handoff/PRD.md`.** O quiz já funciona em `app/` — o trabalho é o visual, não refazer a lógica.
+
 ## Leia nesta ordem
 1. `docs/01-framework.md` — jornada, arquétipos, motor
 2. `copy/01-telas-de-entrada-e-captura.md` (inclui a bifurcação e as duas capturas)
