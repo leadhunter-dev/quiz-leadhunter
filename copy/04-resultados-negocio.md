@@ -40,7 +40,7 @@ O José Henrique vai abrir o seu perfil e te mandar, no WhatsApp, o que ele muda
 
 **Botão:** Quero que o José analise meu perfil →
 
-**Compartilhamento:** "Deu Especialista Invisível 🕶️ — [bom|boa] demais pra continuar [escondido|escondida]. E você, que tipo de caçador(a) B2B é?"
+**Compartilhamento:** "Deu Especialista Invisível 🕶️ — [bom|boa] demais pra continuar [escondido|escondida]. E o seu LinkedIn, está pronto pra prospectar?"
 
 ---
 
@@ -182,7 +182,7 @@ O José Henrique vai abrir o seu perfil e te mandar no WhatsApp o que ele mudari
 
 **Botão:** Quero repaginar meu LinkedIn →
 
-**Compartilhamento:** "Deu [Explorador|Exploradora] de Outros Mares 🧭. E você, que tipo de caçador(a) é?"
+**Compartilhamento:** "Deu [Explorador|Exploradora] de Outros Mares 🧭 — hora de levar meu negócio pra onde os clientes estão. E o seu LinkedIn, está pronto?"
 
 > Nota: "Quem é você" tem duas variações — "você vende para pessoa física" (Q2 = C) ou "o seu ticket pede volume" (Q3 = A).
 

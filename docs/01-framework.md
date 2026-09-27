@@ -2,7 +2,7 @@
 
 **Objetivo:** transformar visitantes em conversas no WhatsApp do José já com o direcionamento certo. Ninguém é desqualificado: cada pessoa cai na oferta que faz sentido para o momento dela.
 
-**Nome do quiz:** Que tipo de caçador(a) você é?
+**Nome do quiz:** Seu LinkedIn está pronto pra prospectar? (resultado em arquétipos de caçador/caçadora)
 
 **Ofertas**
 | Oferta | Para quem | Preço | Status |
@@ -114,4 +114,4 @@ Tudo cai no WhatsApp do José, sem link de pagamento. Para aguentar o volume do 
 - [ ] Preencher no `app/app.js`: `URL_PUBLICA`, `META_PIXEL_ID`, `GA4_ID`, `INSTAGRAM`, `JOSE_FOTO_URL`, `WEBHOOK_URL`
 - [ ] Trocar `og:image` por URL absoluta ao publicar (`app/index.html`)
 - [ ] Nome do arquétipo Explorador(a) de Outros Mares (avaliar renomear — ver `docs/03-campanhas-e-conteudo.md`)
-- [ ] 20 ilustrações dos arquétipos (hoje a carta usa o emoji dentro de um círculo)
+- [x] Arte dos arquétipos: emblemas de mira + ícones Lucide (v1.2). Ilustrações com personagem são opcionais — ver `docs/04-ilustracoes-arquetipos.md`

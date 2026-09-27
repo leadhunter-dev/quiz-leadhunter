@@ -103,4 +103,4 @@ Carrossel de 6 slides no visual da carta:
 
 - **Nome do Explorador(a) de Outros Mares:** é o resultado de quem tem ticket baixo ou vende para pessoa física, e o nome não nomeia uma dor. Ideias para avaliar: "O Vendedor de Vitrine", "O Atirador de Varejo". Mudar em `logica/quiz-config.json` (m/f) e nos textos de `copy/04` e `copy/06`, depois rodar o build e os testes.
 - **Frase "centenas de reuniões toda semana"** no bloco "Por trás deste diagnóstico": conferir contra os números reais antes de escalar anúncio.
-- **Ilustrações dos 20 arquétipos:** hoje a carta usa o emoji num círculo. Um estilo único (duotone azul/tinta, objeto-símbolo do arquétipo) substitui o emoji sem mudar o layout.
+- **Ilustrações com personagem:** hoje a carta usa os emblemas de mira. Se quiser personagens, ver `docs/04-ilustracoes-arquetipos.md`.

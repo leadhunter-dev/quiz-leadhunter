@@ -1,4 +1,4 @@
-# Quiz Funnel Leadhunter — "Que tipo de caçador(a) você é?"
+# Quiz Funnel Leadhunter — "Seu LinkedIn está pronto pra prospectar?"
 
 Quiz com duas trilhas. **Negócio:** direciona entre Plataforma Leadhunter, Serviço Completo, Consultoria de Autoridade e Ajuste de LinkedIn. **Carreira:** leva quem quer crescer ou conseguir um emprego melhor para Currículo + LinkedIn. Resultados em arquétipos (versões masculina e feminina) e CTA para o WhatsApp do José.
 
@@ -8,7 +8,8 @@ quiz-funnel/
 │   ├── 01-framework.md            ← estratégia, jornada, arquétipos, motor, métricas, pendências
 │   ├── 02-mapa-mental.html        ← mapa mental visual (abrir no navegador)
 │   ├── 02-mapa-mental.mmd         ← mesmo mapa em Mermaid (editável)
-│   └── 03-campanhas-e-conteudo.md ← Instagram: campanhas pagas, conteúdo orgânico, links e métricas
+│   ├── 03-campanhas-e-conteudo.md ← Instagram: campanhas pagas, conteúdo orgânico, links e métricas
+│   └── 04-ilustracoes-arquetipos.md ← emblemas atuais e caminho para ilustrações com personagem
 ├── copy/
 │   ├── 01-telas-de-entrada-e-captura.md
 │   ├── 02-perguntas-negocio.md

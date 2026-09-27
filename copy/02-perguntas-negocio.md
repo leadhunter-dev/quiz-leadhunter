@@ -47,7 +47,7 @@
 - **A)** Na hora. Meu perfil é uma vitrine
 - **B)** Mais ou menos. Se ler com calma, entende
 - **C)** Não. Parece um currículo
-- **D)** Meu LinkedIn está abandonado 🕸️
+- **D)** Meu LinkedIn está abandonado
 
 ### Q8 — E a sua presença por lá? *(autoridade)*
 - **A)** Publico toda semana e as pessoas interagem

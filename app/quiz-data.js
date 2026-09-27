@@ -750,7 +750,7 @@ window.QUIZ = {
     },
     {
      "valor": "D",
-     "texto": "Meu LinkedIn está abandonado 🕸️"
+     "texto": "Meu LinkedIn está abandonado"
     }
    ]
   },
@@ -962,7 +962,7 @@ window.QUIZ = {
    "conteudo": "",
    "botao": "Quero que o José analise meu perfil",
    "botaoSecundario": "",
-   "compartilhar": "Deu Especialista Invisível 🕶️ — [bom|boa] demais pra continuar [escondido|escondida]. E você, que tipo de caçador(a) B2B é?"
+   "compartilhar": "Deu Especialista Invisível 🕶️ — [bom|boa] demais pra continuar [escondido|escondida]. E o seu LinkedIn, está pronto pra prospectar?"
   },
   "CAC": {
    "frase": "Vai pra cima [sozinho|sozinha] — e ainda assim traz resultado.",
@@ -1032,7 +1032,7 @@ window.QUIZ = {
    "conteudo": "",
    "botao": "Quero repaginar meu LinkedIn",
    "botaoSecundario": "",
-   "compartilhar": "Deu [Explorador|Exploradora] de Outros Mares 🧭. E você, que tipo de caçador(a) é?"
+   "compartilhar": "Deu [Explorador|Exploradora] de Outros Mares 🧭 — hora de levar meu negócio pra onde os clientes estão. E o seu LinkedIn, está pronto?"
   },
   "TAL": {
    "frase": "Vende como poucos. Só falta o mundo ficar sabendo.",

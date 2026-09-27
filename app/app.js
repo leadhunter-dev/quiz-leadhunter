@@ -1,4 +1,4 @@
-/* Quiz Leadhunter — "Que tipo de caçador(a) você é?"
+/* Quiz Leadhunter — "Seu LinkedIn está pronto pra prospectar?"
  * Interface própria, sem bibliotecas. Conteúdo: quiz-data.js (gerado por build.py). Lógica: motor.js.
  * Configure o bloco abaixo e publique a pasta app/ em qualquer hospedagem estática.
  */
@@ -16,15 +16,15 @@ const CONFIG = {
 /* Microcopy da interface (os textos de conteúdo ficam em copy/). */
 const UI = {
   landing: {
-    padrao: { titulo: "Que tipo de caçador(a) <em>você&nbsp;é?</em>", sub: "Perguntas rápidas para descobrir seu arquétipo — e o que está travando seus próximos clientes ou a sua próxima vaga." },
-    negocio: { titulo: "Que tipo de caçador(a) <em>B2B você&nbsp;é?</em>", sub: "10 perguntas rápidas para descobrir seu arquétipo — e o que está travando seus próximos clientes." },
-    carreira: { titulo: "Que tipo de caçador(a) de <em>oportunidades você&nbsp;é?</em>", sub: "5 perguntas rápidas para descobrir seu arquétipo — e o que está travando a sua próxima vaga." },
+    padrao: { titulo: "Seu LinkedIn está pronto pra <em>prospectar?</em>", sub: "Responda em 2 minutos, descubra seu arquétipo de caçador(a) e veja o que está travando seus próximos clientes ou a sua próxima vaga." },
+    negocio: { titulo: "Seu LinkedIn está pronto pra <em>prospectar?</em>", sub: "10 perguntas rápidas para descobrir seu arquétipo de prospecção — e o que está travando seus próximos clientes." },
+    carreira: { titulo: "Seu LinkedIn está pronto pra <em>próxima vaga?</em>", sub: "5 perguntas rápidas para descobrir seu arquétipo — e o que está travando a sua próxima vaga." },
   },
   genero: { titulo: "Antes de tudo: quem vai para a caçada?", dica: "Só muda a linguagem do quiz." },
   trilha: {
     titulo: "O que te trouxe até aqui?",
-    A: { icone: "🏢", titulo: "Mais clientes", texto: "Quero mais clientes para a minha empresa ou negócio", meta: "10 perguntas · ~2 min" },
-    B: { icone: "🚀", titulo: "Carreira", texto: "Quero crescer na carreira ou conseguir um emprego melhor", meta: "5 perguntas · ~1 min" },
+    A: { icone: "building-2", titulo: "Mais clientes", texto: "Quero mais clientes para a minha empresa ou negócio", meta: "10 perguntas · ~2 min" },
+    B: { icone: "trending-up", titulo: "Carreira", texto: "Quero crescer na carreira ou conseguir um emprego melhor", meta: "5 perguntas · ~1 min" },
   },
   eixos: { Q1: "Execução", Q2: "Qualificação", Q3: "Investimento", Q4: "Execução", Q5: "Execução", Q6: "Estrutura", Q7: "Autoridade",
     Q8: "Autoridade", Q9: "Gargalo", Q10: "Investimento", C1: "Momento", C2: "Bagagem", C3: "Currículo", C4: "LinkedIn", C5: "Trava" },
@@ -100,7 +100,19 @@ function trackEvent(nome, dados = {}, padrao = {}) {
 }
 
 /* ---------- carta (componente-assinatura) ---------- */
-const emojiDe = (cod, g = estado.genero) => ARQ[cod].emoji || (g === "f" ? ARQ[cod].emoji_f : ARQ[cod].emoji_m);
+/* Emblema do arquétipo: mira de caçador + ícone Lucide. Mesmo desenho na página e no card (canvas). */
+const ICONE_ARQ = { ESP: "glasses", CAC: "crosshair", MAE: "music", GEN: ["swords", "crown"], REF: "dices",
+  EXP: "compass", TAL: "gem", FAN: "ghost", FOG: ["rocket", "star"], VIA: "luggage" };
+const iconeArq = (cod, g = estado.genero) => { const v = ICONE_ARQ[cod]; return Array.isArray(v) ? v[g === "f" ? 1 : 0] : v; };
+function emblemaSVG(cod, g = estado.genero, cls = "emblema") {
+  return `<svg class="${cls}" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" aria-hidden="true">
+    <circle cx="60" cy="60" r="58" fill="#eef0ff"/>
+    <circle cx="60" cy="60" r="50" fill="none" stroke="#3344ff" stroke-opacity=".4" stroke-width="1" stroke-dasharray="2 4"/>
+    <path d="M60 3v11M60 106v11M3 60h11M106 60h11" stroke="#3344ff" stroke-width="2.5" stroke-linecap="round"/>
+    <circle cx="60" cy="60" r="38" fill="#3344ff"/>
+    <g transform="translate(38 38) scale(1.8333)" fill="none" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">${ICONES[iconeArq(cod, g)]}</g>
+  </svg>`;
+}
 const numeroDe = (cod) => String(ORDEM_ARQ.indexOf(cod) + 1).padStart(2, "0") + " / " + String(ORDEM_ARQ.length).padStart(2, "0");
 
 /* Níveis da carta (1 a 5), calculados das respostas. Só ilustram o resultado — não entram na lógica. */
@@ -124,7 +136,7 @@ const nivelHTML = (v) => `<span class="nivel" aria-label="nível ${v} de 5">${[1
 function cartaHTML(cod, res, r) {
   return `<article class="carta" aria-label="Carta do arquétipo">
     <div class="carta-topo mono"><span>Arquétipo Nº ${numeroDe(cod)}</span><span>Leadhunter</span></div>
-    <div class="carta-emoji" aria-hidden="true">${emojiDe(cod)}</div>
+    <div class="carta-emblema">${emblemaSVG(cod)}</div>
     <h1 class="carta-nome">${esc(ARQ[cod][estado.genero])}</h1>
     <p class="carta-frase">“${fmt(Q.resultados[cod].frase)}”</p>
     <ul class="carta-atributos">${atributos(res, r).map(([rot, v]) => `<li><span class="mono">${rot}</span>${nivelHTML(v)}</li>`).join("")}</ul>
@@ -145,7 +157,7 @@ function montarLanding() {
   $("leque").innerHTML = vitrine.map((cod, i) => i === 2
     ? `<div class="carta-mini carta-verso" style="--r:${rot[i]}deg;--x:0px;--y:${ys[i]}px;--ad:${i * .3}s;z-index:3"><span>?</span></div>`
     : `<div class="carta-mini" style="--r:${rot[i]}deg;--x:${xs[i]}px;--y:${ys[i]}px;--ad:${i * .3}s;z-index:${2 - Math.abs(i - 2)}">
-        <span class="emoji">${emojiDe(cod, i % 2 ? "f" : "m")}</span><span class="borrado">${esc(ARQ[cod].m)}</span></div>`).join("");
+        ${emblemaSVG(cod, i % 2 ? "f" : "m", "emblema-mini")}<span class="borrado">${esc(ARQ[cod].m)}</span></div>`).join("");
   trackEvent("landing", { trilha_fixa: t || "nenhuma" }, { fb: "ViewContent" });
 }
 
@@ -182,14 +194,14 @@ function renderPasso(voltando = false) {
   if (passo === "genero") {
     html = `<h2 class="pergunta-titulo" id="tituloPasso">${UI.genero.titulo}</h2><p class="pergunta-dica">${UI.genero.dica}</p>
       <div class="opcoes opcoes-grandes" role="radiogroup" aria-labelledby="tituloPasso">
-        ${[["m", "Caçador"], ["f", "Caçadora"]].map(([v, t]) => `<button type="button" class="opcao opcao-grande ${estado.genero === v && estado.generoEscolhido ? "selecionada" : ""}" role="radio" aria-checked="${estado.genero === v && !!estado.generoEscolhido}" data-valor="${v}">
-          <span class="icone" aria-hidden="true">🏹</span><strong>${t}</strong></button>`).join("")}
+        ${[["m", "Caçador", "Textos no masculino"], ["f", "Caçadora", "Textos no feminino"]].map(([v, t, sub]) => `<button type="button" class="opcao opcao-grande ${estado.genero === v && estado.generoEscolhido ? "selecionada" : ""}" role="radio" aria-checked="${estado.genero === v && !!estado.generoEscolhido}" data-valor="${v}">
+          <strong>${t}</strong><small class="mono">${sub}</small></button>`).join("")}
       </div>`;
   } else if (passo === "trilha") {
     html = `<h2 class="pergunta-titulo" id="tituloPasso">${UI.trilha.titulo}</h2>
       <div class="opcoes opcoes-trilha" role="radiogroup" aria-labelledby="tituloPasso">
         ${["A", "B"].map((v) => { const o = UI.trilha[v]; return `<button type="button" class="opcao opcao-grande ${estado.trilha === v ? "selecionada" : ""}" role="radio" aria-checked="${estado.trilha === v}" data-valor="${v}">
-          <span class="icone" aria-hidden="true">${o.icone}</span><strong>${o.titulo}</strong><span>${o.texto}</span><small class="mono">${o.meta}</small></button>`; }).join("")}
+          <span class="icone">${icone(o.icone)}</span><strong>${o.titulo}</strong><span>${o.texto}</span><small class="mono">${o.meta}</small></button>`; }).join("")}
       </div>`;
   } else if (passo === "captura") {
     html = capturaHTML();
@@ -212,7 +224,7 @@ function renderPasso(voltando = false) {
 const REACOES = [
   [(v) => v.Q4 === "A", "Q4", "Indicação é ótimo… até o mês em que ela não vem."],
   [(v) => v.Q5 === "B", "Q5", "Clássico. Quem mais vende é quem menos tem tempo pra prospectar."],
-  [(v) => ["C", "D"].includes(v.Q7), "Q7", "Anotado. Vamos falar sobre isso no final. 👀"],
+  [(v) => ["C", "D"].includes(v.Q7), "Q7", "Anotado. Vamos falar sobre isso no final."],
   [(v) => v.C2 === "A", "C2", "Quem vende no balcão vende em qualquer lugar. Guarda essa."],
 ];
 let travado = false;
@@ -262,14 +274,14 @@ function capturaHTML() {
   return `<form id="formCaptura" novalidate>
     <div class="captura-teaser">
       <div class="carta-mini carta-verso" aria-hidden="true"><span>?</span></div>
-      <p><strong>Seu arquétipo está pronto 🎯</strong>${neg ? "Onde a gente te manda o resultado completo e a análise do seu LinkedIn?" : "Onde a gente te manda o resultado e as dicas para o seu currículo e LinkedIn?"}</p>
+      <p><strong>Seu arquétipo está pronto</strong>${neg ? "Onde a gente te manda o resultado completo e a análise do seu LinkedIn?" : "Onde a gente te manda o resultado e as dicas para o seu currículo e LinkedIn?"}</p>
     </div>
     <div class="campo" data-campo="nome"><label for="nome">Seu nome</label>
       <input id="nome" name="nome" type="text" autocomplete="given-name" placeholder="${genero("Como você quer ser [chamado|chamada]?")}">
       <p class="msg-erro">Como a gente te chama?</p></div>
     <div class="campo" data-campo="whatsapp"><label for="whatsapp">WhatsApp (com DDD)</label>
       <input id="whatsapp" name="whatsapp" type="tel" inputmode="tel" autocomplete="tel-national" placeholder="(21) 99999-9999">
-      <p class="msg-erro">Confere o número com DDD 🙂</p></div>
+      <p class="msg-erro">Confere o número com DDD.</p></div>
     <div class="campo" data-campo="email"><label for="email">${neg ? "E-mail profissional" : "E-mail"}</label>
       <input id="email" name="email" type="email" inputmode="email" autocomplete="email" placeholder="voce@empresa.com.br">
       <p class="msg-erro">Esse e-mail parece incompleto.</p></div>
@@ -408,14 +420,14 @@ function renderResultado(res, d) {
         <p class="mono">§ O caminho que a gente recomenda</p>
         <h2>${esc(t.ofertaTitulo)}</h2>
         <p>${fmt(t.oferta)}</p>
-        ${semLinkedin ? `<p class="bonus-res">🔗 <strong>${esc(Q.extras.semLinkedin.titulo)}.</strong> ${fmt(Q.extras.semLinkedin.texto)}</p>`
-          : t.bonus ? `<p class="bonus-res">🎁 ${fmt(t.bonus)}</p>` : ""}
-        ${conteudoTexto && CONFIG.PAGINA_CARREIRA_URL ? `<p class="conteudo">📚 <a href="${esc(CONFIG.PAGINA_CARREIRA_URL)}" target="_blank" rel="noopener">${fmt(conteudoTexto)} →</a></p>` : ""}
+        ${semLinkedin ? `<p class="bonus-res">${icone("link")}<span><strong>${esc(Q.extras.semLinkedin.titulo)}.</strong> ${fmt(Q.extras.semLinkedin.texto)}</span></p>`
+          : t.bonus ? `<p class="bonus-res">${icone("gift")}<span>${fmt(t.bonus)}</span></p>` : ""}
+        ${conteudoTexto && CONFIG.PAGINA_CARREIRA_URL ? `<p class="conteudo">${icone("book-open")} <a href="${esc(CONFIG.PAGINA_CARREIRA_URL)}" target="_blank" rel="noopener">${fmt(conteudoTexto)} →</a></p>` : ""}
         ${botaoWpp("ctaWpp")}
         <p class="wpp-micro">Abre o WhatsApp do José com a mensagem pronta.</p>
       </div>
       <div class="caixa prova"><p class="mono">§ ${esc(Q.extras.prova.titulo)}</p><p>${fmt(Q.extras.prova.texto)}</p></div>
-      ${res.conviteCarreira ? `<div class="caixa convite"><p class="mono">§ Bônus</p><h3>🚀 ${esc(Q.extras.convite.titulo)}</h3><p>${fmt(Q.extras.convite.texto)}</p>
+      ${res.conviteCarreira ? `<div class="caixa convite"><p class="mono">§ Bônus</p><h3>${esc(Q.extras.convite.titulo)}</h3><p>${fmt(Q.extras.convite.texto)}</p>
         <button type="button" class="btn btn-contorno" id="btnCarreira">${esc(Q.extras.convite.botao)} →</button></div>` : ""}
       <div class="compartilhar">
         <p class="mono" style="color:var(--accent)">§ Compartilhe</p>
@@ -447,7 +459,7 @@ function renderResultado(res, d) {
     trackEvent("compartilhar", { resultado: cod, formato: "link" });
     try {
       if (navigator.share) await navigator.share({ text: texto });
-      else { await navigator.clipboard.writeText(texto); toast("Texto copiado! Cola onde quiser 😉"); }
+      else { await navigator.clipboard.writeText(texto); toast("Texto copiado! É só colar onde quiser."); }
     } catch (_) {}
   });
   $("btnRefazer").addEventListener("click", () => {
@@ -544,7 +556,7 @@ async function desenharCard(formato, res) {
   ctx.fillStyle = "rgba(255,255,255,.7)";
   ctx.font = mono(26);
   ctx.textAlign = "right";
-  ctx.fillText("QUIZ · QUE TIPO DE CAÇADOR(A)?", W - pad, yTopo + lh / 2 + 9);
+  ctx.fillText(carreira ? "DIAGNÓSTICO · CARREIRA" : "DIAGNÓSTICO · PROSPECÇÃO", W - pad, yTopo + lh / 2 + 9);
 
   // carta
   const cx = pad, cw = W - pad * 2;
@@ -575,12 +587,9 @@ async function desenharCard(formato, res) {
     if (altura <= baseLivre - topoLivre) break;
   }
   const ey = topoLivre + Math.max(0, (baseLivre - topoLivre - altura) / 2) + er;
-  ctx.beginPath(); ctx.arc(W / 2, ey, er, 0, Math.PI * 2); ctx.fillStyle = "#eef0ff"; ctx.fill();
-  ctx.textAlign = "center"; ctx.textBaseline = "middle";
-  ctx.font = `${Math.round(er * 1.1)}px "Apple Color Emoji","Segoe UI Emoji","Noto Color Emoji",sans-serif`;
-  ctx.fillStyle = "#0a0d14";
-  ctx.fillText(emojiDe(cod), W / 2, ey + 6);
-  ctx.textBaseline = "alphabetic";
+  const emblema = await carregarImagem("data:image/svg+xml;charset=utf-8," + encodeURIComponent(emblemaSVG(cod)));
+  ctx.drawImage(emblema, W / 2 - er, ey - er, er * 2, er * 2);
+  ctx.textAlign = "center";
 
   // nome
   let y = ey + er + tamNome * 1.3;
@@ -619,15 +628,17 @@ async function desenharCard(formato, res) {
   // chamada
   if (story) {
     ctx.textAlign = "center"; ctx.fillStyle = "#ffffff";
-    ctx.font = "500 54px Poppins, sans-serif";
-    ctx.fillText("E você, que tipo de caçador(a) é?", W / 2, cy + ch + 130);
+    ctx.font = "500 50px Poppins, sans-serif";
+    const chamada = carreira ? "E o seu LinkedIn, está pronto pra próxima vaga?" : "E o seu LinkedIn, está pronto pra prospectar?";
+    const lc = quebrarLinhas(ctx, chamada, W - pad * 2);
+    lc.forEach((l, i) => ctx.fillText(l, W / 2, cy + ch + 110 + i * 60));
     ctx.font = "500 34px 'DM Sans', sans-serif";
     ctx.fillStyle = "rgba(255,255,255,.75)";
-    ctx.fillText("Descubra em 2 minutos → " + urlPublica().replace(/\/$/, ""), W / 2, cy + ch + 196);
+    ctx.fillText("Faça o diagnóstico em 2 minutos → " + urlPublica().replace(/\/$/, ""), W / 2, cy + ch + 110 + lc.length * 60 + 26);
   } else {
     ctx.textAlign = "center"; ctx.fillStyle = "rgba(255,255,255,.8)";
     ctx.font = "500 34px 'DM Sans', sans-serif";
-    ctx.fillText("E você? Descubra em 2 min → " + urlPublica().replace(/\/$/, ""), W / 2, cy + ch + 110);
+    ctx.fillText("E o seu LinkedIn? Diagnóstico em 2 min → " + urlPublica().replace(/\/$/, ""), W / 2, cy + ch + 110);
   }
   return cv;
 }
@@ -649,7 +660,7 @@ async function compartilharCard(formato, res, d) {
     a.download = nome;
     document.body.appendChild(a); a.click(); a.remove();
     setTimeout(() => URL.revokeObjectURL(a.href), 4000);
-    toast(formato === "story" ? "Card baixado! Posta no story e marca a Leadhunter 😉" : "Card baixado! É só postar 😉", 3200);
+    toast(formato === "story" ? "Card baixado! Posta no story e marca a Leadhunter." : "Card baixado! É só postar.", 3200);
   } catch (e) {
     if (e && e.name === "AbortError") return;
     console.warn("card falhou", e);
@@ -668,3 +679,4 @@ $("comecar").addEventListener("click", () => {
 $("voltar").addEventListener("click", voltar);
 montarLanding();
 window.__quiz = { estado, desenharCard }; // para testes
+window.__emblema = emblemaSVG;

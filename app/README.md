@@ -10,6 +10,7 @@ Quiz pronto para hospedar, com o design system da Leadhunter aplicado. HTML/CSS/
 | `app.js` | Interface: passos, captura, resultado, carta, cards de compartilhamento, WhatsApp, analytics. **Configuração no topo.** |
 | `motor.js` | Lógica de resultado (porta fiel de `logica/motor.py`). Não mexer: mude `logica/quiz-config.json`. |
 | `style.css` | Visual (tokens da marca em `:root`) |
+| `icones.js` | Ícones Lucide (licença ISC) usados na interface e nos emblemas dos arquétipos |
 | `quiz-data.js` | **Gerado** a partir de `copy/` e `logica/quiz-config.json`. Não editar à mão. |
 | `build.py` | Gera o `quiz-data.js` |
 | `og.png` | Imagem de prévia do link (WhatsApp, LinkedIn, Instagram) |
@@ -21,8 +22,8 @@ Quiz pronto para hospedar, com o design system da Leadhunter aplicado. HTML/CSS/
 Na pasta `app/`, rode `python3 -m http.server` e abra `http://localhost:8000`. Abrir o `index.html` com dois cliques também funciona, mas o card de compartilhamento precisa de um servidor.
 
 Links por trilha:
-- `…/?t=negocio` → pula a bifurcação, headline "Que tipo de caçador(a) B2B você é?"
-- `…/?t=carreira` → pula a bifurcação, headline "…de oportunidades você é?"
+- `…/?t=negocio` → pula a bifurcação, headline "Seu LinkedIn está pronto pra prospectar?"
+- `…/?t=carreira` → pula a bifurcação, headline "Seu LinkedIn está pronto pra próxima vaga?"
 - Combine com UTMs: `?t=negocio&utm_source=instagram&utm_medium=paid&utm_campaign=quiz-negocio&utm_content=carrossel-arquetipos`
 
 ## Mudou um texto?

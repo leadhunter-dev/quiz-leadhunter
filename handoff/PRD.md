@@ -1,4 +1,4 @@
-# PRD — Quiz Funnel Leadhunter "Que tipo de caçador(a) você é?"
+# PRD — Quiz Funnel Leadhunter "Seu LinkedIn está pronto pra prospectar?"
 
 **Versão:** 1.0 (conteúdo e lógica v0.3) · **Dono:** José Henrique Mota · **Status:** funcional validado; falta o visual definitivo
 **Para quem é este documento:** o agente de design/front que vai aplicar o design system da Leadhunter e publicar o quiz.
