@@ -9,7 +9,7 @@
 ### Q1 — Qual cadeira você ocupa? *(eixo: execução / decisor)*
 - **A)** Sou [sócio ou fundador|sócia ou fundadora] e faço de tudo um pouco
 - **B)** Sou [sócio ou diretor|sócia ou diretora] e já tenho time comercial
-- **C)** Lidero o time comercial (gerente, head, coordenador[a])
+- **C)** Lidero o time comercial (gerente, head, [coordenador|coordenadora])
 - **D)** Sou [consultor|consultora] ou especialista e vendo o meu próprio serviço
 - **E)** Sou [vendedor|vendedora] ou SDR *(o resultado ganha um convite para a Trilha Carreira)*
 
@@ -47,7 +47,7 @@
 - **A)** Na hora. Meu perfil é uma vitrine
 - **B)** Mais ou menos. Se ler com calma, entende
 - **C)** Não. Parece um currículo
-- **D)** Meu LinkedIn está abandonado 🕸️
+- **D)** Meu LinkedIn está abandonado
 
 ### Q8 — E a sua presença por lá? *(autoridade)*
 - **A)** Publico toda semana e as pessoas interagem

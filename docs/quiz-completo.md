@@ -14,15 +14,15 @@
 
 **Selo:** Quiz Leadhunter · 2 minutos
 
-**Headline:** Que tipo de caçador(a) você é?
+**Headline:** Seu LinkedIn está pronto pra prospectar?
 
 **Subheadline:** Perguntas rápidas para descobrir seu arquétipo — e o que está travando seus próximos clientes ou a sua próxima vaga.
 
-**Bônus (destaque):** 🎁 Você ainda ganha uma análise do seu LinkedIn feita pessoalmente pelo José Henrique, fundador da Leadhunter.
+**Bônus (destaque):** 🎁 Bônus: uma análise completa e pessoal do seu LinkedIn, feita pelo José Henrique, especialista em LinkedIn e fundador da Leadhunter.
 
-> Nota: o título ficou sem "B2B" porque agora o quiz também atende quem quer crescer na carreira. Nos anúncios dá para usar variações por público: "Que tipo de caçador(a) B2B você é?" (negócio) e "Que tipo de caçador(a) de oportunidades você é?" (carreira).
+> Nota: a headline fala com a dor ("meu LinkedIn não gera reunião") e o arquétipo vira o resultado. Com o link `?t=carreira` a headline muda para "…pronto pra próxima vaga?". Em anúncio para público sênior, testar também: "Diagnóstico de prospecção: qual é o seu perfil de caçador B2B?".
 
-**Botão:** Descobrir meu arquétipo →
+**Botão:** Começar o diagnóstico →
 
 **Rodapé:** Sem enrolação. Sem resposta certa. Só seja [sincero|sincera]. 😉
 
@@ -72,7 +72,7 @@ Usar no máximo 3 durante o quiz para manter o ritmo:
 1. Seu nome
 2. WhatsApp (com DDD)
 3. E-mail profissional
-4. Link do seu perfil no LinkedIn — *microcopy:* "É por aqui que o José faz a sua análise. Sem o link, não tem análise."
+4. Link do seu perfil no LinkedIn — **opcional** — *microcopy:* "Opcional, mas é ele que libera o seu bônus: o José Henrique, especialista em LinkedIn e fundador da Leadhunter, abre o seu perfil e te manda uma análise completa e pessoal. Sem link, sem análise."
 
 **Checkbox (LGPD):** Aceito receber meu resultado e contato da Leadhunter por WhatsApp e e-mail.
 
@@ -234,7 +234,7 @@ O José Henrique vai abrir o seu perfil e te mandar, no WhatsApp, o que ele muda
 
 **Botão:** Quero que o José analise meu perfil →
 
-**Compartilhamento:** "Deu Especialista Invisível 🕶️ — [bom|boa] demais pra continuar [escondido|escondida]. E você, que tipo de caçador(a) B2B é?"
+**Compartilhamento:** "Deu Especialista Invisível 🕶️ — [bom|boa] demais pra continuar [escondido|escondida]. E o seu LinkedIn, está pronto pra prospectar?"
 
 ---
 
@@ -376,7 +376,7 @@ O José Henrique vai abrir o seu perfil e te mandar no WhatsApp o que ele mudari
 
 **Botão:** Quero repaginar meu LinkedIn →
 
-**Compartilhamento:** "Deu [Explorador|Exploradora] de Outros Mares 🧭. E você, que tipo de caçador(a) é?"
+**Compartilhamento:** "Deu [Explorador|Exploradora] de Outros Mares 🧭 — hora de levar meu negócio pra onde os clientes estão. E o seu LinkedIn, está pronto?"
 
 > Nota: "Quem é você" tem duas variações — "você vende para pessoa física" (Q2 = C) ou "o seu ticket pede volume" (Q3 = A).
 

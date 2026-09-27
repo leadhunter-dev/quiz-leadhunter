@@ -610,7 +610,7 @@ window.QUIZ = {
     },
     {
      "valor": "C",
-     "texto": "Lidero o time comercial (gerente, head, coordenador[a])"
+     "texto": "Lidero o time comercial (gerente, head, [coordenador|coordenadora])"
     },
     {
      "valor": "D",
@@ -750,7 +750,7 @@ window.QUIZ = {
     },
     {
      "valor": "D",
-     "texto": "Meu LinkedIn está abandonado 🕸️"
+     "texto": "Meu LinkedIn está abandonado"
     }
    ]
   },
@@ -962,7 +962,7 @@ window.QUIZ = {
    "conteudo": "",
    "botao": "Quero que o José analise meu perfil",
    "botaoSecundario": "",
-   "compartilhar": "Deu Especialista Invisível 🕶️ — [bom|boa] demais pra continuar [escondido|escondida]. E você, que tipo de caçador(a) B2B é?"
+   "compartilhar": "Deu Especialista Invisível 🕶️ — [bom|boa] demais pra continuar [escondido|escondida]. E o seu LinkedIn, está pronto pra prospectar?"
   },
   "CAC": {
    "frase": "Vai pra cima [sozinho|sozinha] — e ainda assim traz resultado.",
@@ -1018,7 +1018,7 @@ window.QUIZ = {
    "conteudo": "",
    "botao": "Quero parar de depender da sorte",
    "botaoSecundario": "",
-   "compartilhar": "Deu Refém da Indicação 🎲 — hora de parar de depender da sorte. E você?"
+   "compartilhar": "Deu Refém da Indicação 🎲 — meus clientes gostam tanto que me indicam. Agora é não depender só disso. E você?"
   },
   "EXP": {
    "frase": "Seu tesouro está num mapa diferente — e a vitrine vem primeiro.",
@@ -1032,7 +1032,7 @@ window.QUIZ = {
    "conteudo": "",
    "botao": "Quero repaginar meu LinkedIn",
    "botaoSecundario": "",
-   "compartilhar": "Deu [Explorador|Exploradora] de Outros Mares 🧭. E você, que tipo de caçador(a) é?"
+   "compartilhar": "Deu [Explorador|Exploradora] de Outros Mares 🧭 — hora de levar meu negócio pra onde os clientes estão. E o seu LinkedIn, está pronto?"
   },
   "TAL": {
    "frase": "Vende como poucos. Só falta o mundo ficar sabendo.",
@@ -1095,6 +1095,14 @@ window.QUIZ = {
   "alerta": {
    "titulo": "Um alerta antes de você acelerar",
    "texto": "Pelas suas respostas, o seu LinkedIn ainda não sustenta a sua abordagem. Na prática, isso significa que cada convite e cada mensagem vai converter menos, porque o decisor abre o seu perfil e não encontra motivo para responder. Antes de colocar volume, vale ajustar a vitrine. A análise que o José vai te mandar começa exatamente por aqui."
+  },
+  "semLinkedin": {
+   "titulo": "Faltou o seu LinkedIn",
+   "texto": "Sem link, sem análise. Mande o link do seu perfil na conversa com o José e ele te devolve a análise completa e pessoal do seu LinkedIn."
+  },
+  "prova": {
+   "titulo": "Por trás deste diagnóstico",
+   "texto": "O método por trás deste quiz foi validado por José Henrique Mota, especialista em LinkedIn e vendas B2B, com grandes contratos enterprise fechados na carreira. É o mesmo método que a Leadhunter opera hoje para os clientes: **mais de 14 mil convites de conexão personalizados por mês** e **centenas de reuniões toda semana**."
   },
   "convite": {
    "titulo": "E a sua carreira?",

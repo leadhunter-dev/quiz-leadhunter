@@ -2,7 +2,7 @@
 
 **Objetivo:** transformar visitantes em conversas no WhatsApp do José já com o direcionamento certo. Ninguém é desqualificado: cada pessoa cai na oferta que faz sentido para o momento dela.
 
-**Nome do quiz:** Que tipo de caçador(a) você é?
+**Nome do quiz:** Seu LinkedIn está pronto pra prospectar? (resultado em arquétipos de caçador/caçadora)
 
 **Ofertas**
 | Oferta | Para quem | Preço | Status |
@@ -19,7 +19,7 @@
 
 ```
 Tráfego → Landing → Caçador ou Caçadora? → O que te trouxe até aqui?
-   ├─ Negócio  → 10 perguntas → Captura (LinkedIn obrigatório) → Resultado → WhatsApp → análise do perfil (48h úteis) → call → proposta
+   ├─ Negócio  → 10 perguntas → Captura (LinkedIn opcional)    → Resultado → WhatsApp → análise do perfil (48h úteis) → call → proposta
    └─ Carreira →  5 perguntas → Captura (LinkedIn opcional)    → Resultado → WhatsApp → lead manda currículo → 2 ajustes → oferta
 ```
 
@@ -109,4 +109,9 @@ Tudo cai no WhatsApp do José, sem link de pagamento. Para aguentar o volume do 
 - [ ] Calibrar faixas de ticket (Q3)
 - [x] Q10 virou faturamento mensal; corte do Serviço Completo definido (R$ 100 mil+/mês + time mínimo)
 - [ ] Confirmar o número de WhatsApp
-- [ ] Onde registrar os leads (Notion, planilha ou CRM)
+- [x] Leads salvos na Planilha Google (aba "Leads") via Apps Script — `WEBHOOK_URL` configurada e testada
+- [ ] Revisar a frase "centenas de reuniões toda semana" (bloco "Por trás deste diagnóstico", `copy/04`) contra os números reais da operação antes de rodar anúncio
+- [ ] Preencher no `app/app.js`: `URL_PUBLICA`, `META_PIXEL_ID`, `GA4_ID`, `INSTAGRAM`, `JOSE_FOTO_URL`
+- [ ] Trocar `og:image` por URL absoluta ao publicar (`app/index.html`)
+- [ ] Nome do arquétipo Explorador(a) de Outros Mares (avaliar renomear — ver `docs/03-campanhas-e-conteudo.md`)
+- [x] Arte dos arquétipos: emblemas de mira + ícones Lucide (v1.2). Ilustrações com personagem são opcionais — ver `docs/04-ilustracoes-arquetipos.md`

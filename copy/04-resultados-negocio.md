@@ -40,7 +40,7 @@ O José Henrique vai abrir o seu perfil e te mandar, no WhatsApp, o que ele muda
 
 **Botão:** Quero que o José analise meu perfil →
 
-**Compartilhamento:** "Deu Especialista Invisível 🕶️ — [bom|boa] demais pra continuar [escondido|escondida]. E você, que tipo de caçador(a) B2B é?"
+**Compartilhamento:** "Deu Especialista Invisível 🕶️ — [bom|boa] demais pra continuar [escondido|escondida]. E o seu LinkedIn, está pronto pra prospectar?"
 
 ---
 
@@ -152,7 +152,7 @@ O José Henrique vai analisar o seu LinkedIn e te mostrar como transformar a sua
 
 **Botão:** Quero parar de depender da sorte →
 
-**Compartilhamento:** "Deu Refém da Indicação 🎲 — hora de parar de depender da sorte. E você?"
+**Compartilhamento:** "Deu Refém da Indicação 🎲 — meus clientes gostam tanto que me indicam. Agora é não depender só disso. E você?"
 
 ---
 
@@ -182,7 +182,7 @@ O José Henrique vai abrir o seu perfil e te mandar no WhatsApp o que ele mudari
 
 **Botão:** Quero repaginar meu LinkedIn →
 
-**Compartilhamento:** "Deu [Explorador|Exploradora] de Outros Mares 🧭. E você, que tipo de caçador(a) é?"
+**Compartilhamento:** "Deu [Explorador|Exploradora] de Outros Mares 🧭 — hora de levar meu negócio pra onde os clientes estão. E o seu LinkedIn, está pronto?"
 
 > Nota: "Quem é você" tem duas variações — "você vende para pessoa física" (Q2 = C) ou "o seu ticket pede volume" (Q3 = A).
 
@@ -195,6 +195,27 @@ O José Henrique vai abrir o seu perfil e te mandar no WhatsApp o que ele mudari
 **Título:** Um alerta antes de você acelerar
 
 **Texto:** Pelas suas respostas, o seu LinkedIn ainda não sustenta a sua abordagem. Na prática, isso significa que cada convite e cada mensagem vai converter menos, porque o decisor abre o seu perfil e não encontra motivo para responder. Antes de colocar volume, vale ajustar a vitrine. A análise que o José vai te mandar começa exatamente por aqui.
+
+---
+
+## Bloco condicional — 🔗 Sem LinkedIn na captura
+
+> Aparece na Trilha Negócio quando a pessoa deixou o LinkedIn em branco. Substitui o Bônus.
+
+**Título:** Faltou o seu LinkedIn
+
+**Texto:** Sem link, sem análise. Mande o link do seu perfil na conversa com o José e ele te devolve a análise completa e pessoal do seu LinkedIn.
+
+---
+
+## Bloco fixo — Por trás deste diagnóstico
+
+> Aparece em todos os resultados (Negócio e Carreira), logo depois do botão de WhatsApp. Tom sóbrio: é assinatura, não anúncio.
+> ⚠️ Números informados pelo José (set/2026). Revisar se a operação mudar.
+
+**Título:** Por trás deste diagnóstico
+
+**Texto:** O método por trás deste quiz foi validado por José Henrique Mota, especialista em LinkedIn e vendas B2B, com grandes contratos enterprise fechados na carreira. É o mesmo método que a Leadhunter opera hoje para os clientes: **mais de 14 mil convites de conexão personalizados por mês** e **centenas de reuniões toda semana**.
 
 ---
 

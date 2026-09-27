@@ -1,4 +1,4 @@
-# PRD — Quiz Funnel Leadhunter "Que tipo de caçador(a) você é?"
+# PRD — Quiz Funnel Leadhunter "Seu LinkedIn está pronto pra prospectar?"
 
 **Versão:** 1.0 (conteúdo e lógica v0.3) · **Dono:** José Henrique Mota · **Status:** funcional validado; falta o visual definitivo
 **Para quem é este documento:** o agente de design/front que vai aplicar o design system da Leadhunter e publicar o quiz.
@@ -36,7 +36,7 @@ A Leadhunter vende três coisas para públicos diferentes e hoje não tem um fil
 
 ```
 Landing → Caçador/Caçadora → "O que te trouxe até aqui?"
-  ├─ Negócio:  Q1…Q10 → Captura (LinkedIn obrigatório) ─┐
+  ├─ Negócio:  Q1…Q10 → Captura (LinkedIn opcional)   ─┐
   └─ Carreira: C1…C5  → Captura (LinkedIn opcional)   ──┴→ Carregamento (~3 s) → Resultado → WhatsApp
 ```
 
@@ -62,11 +62,11 @@ Landing → Caçador/Caçadora → "O que te trouxe até aqui?"
 - RF4 — Só aparecem as perguntas da trilha escolhida.
 
 ### 5.3 Captura
-- RF5 — Campos: nome (obrigatório) · WhatsApp com DDD (obrigatório, 10–13 dígitos) · e-mail (obrigatório, válido) · LinkedIn (**obrigatório na Negócio**, opcional na Carreira; deve conter `linkedin.com/`) · consentimento LGPD (obrigatório).
+- RF5 — Campos: nome (obrigatório) · WhatsApp com DDD (obrigatório, 10–13 dígitos) · e-mail (obrigatório, válido) · LinkedIn (opcional nas duas trilhas; se preenchido, deve conter `linkedin.com/`). Na Negócio, o microcopy reforça: sem link, sem análise · consentimento LGPD (obrigatório).
 - RF6 — A captura vem **antes** do resultado.
 
 ### 5.4 Resultado
-- RF7 — Ordem: "[Nome], seu arquétipo é" · avatar/emoji animado · nome do arquétipo · frase de efeito · Quem é você · Superpoder · Ponto cego · Se nada mudar · [Alerta de autoridade, se aplicável] · Bloco da oferta (título, texto, bônus, link de conteúdo na Carreira) · **Botão WhatsApp** · [Convite Trilha Carreira, se aplicável] · Compartilhar · Refazer.
+- RF7 — Ordem: "[Nome], seu arquétipo é" · avatar/emoji animado · nome do arquétipo · frase de efeito · Quem é você · Superpoder · Ponto cego · Se nada mudar · [Alerta de autoridade, se aplicável] · Bloco da oferta (título, texto, bônus, link de conteúdo na Carreira) · [Aviso "sem LinkedIn", se a Negócio veio sem link] · **Botão WhatsApp** · Por trás deste diagnóstico (prova da Leadhunter, as duas trilhas) · [Convite Trilha Carreira, se aplicável] · Compartilhar · Refazer.
 - RF8 — **Alerta de autoridade:** aparece em Caçador(a), Maestro/Maestra, General/Rainha e Refém quando a nota de autoridade (Q7+Q8) ≤ 2.
 - RF9 — **Convite para a Trilha Carreira:** aparece quando Q1 = E (vendedor/SDR). Ao clicar, reinicia na C1 mantendo gênero e dados da captura.
 - RF10 — **Botão WhatsApp:** `https://wa.me/5521969353524?text=<mensagem>` com a mensagem do arquétipo (`copy/06`, seção 1) na forma do gênero e com o primeiro nome inserido ("Oi José! Aqui é Ana. Fiz o quiz…"). Abre em nova aba.
@@ -80,7 +80,7 @@ Landing → Caçador/Caçadora → "O que te trouxe até aqui?"
 ### 5.6 Dados e integrações
 - RF15 — Ao concluir, enviar o lead por `POST` (no-cors, `text/plain` com JSON) para `WEBHOOK_URL` (Google Apps Script → Planilha; script pronto em `app/planilha-google-apps-script.js`). Campos: `data, nome, whatsapp, email, linkedin, genero, trilha, arquetipo, arquetipo_nome, temperatura, autoridade, alerta_autoridade, pontos, respostas, utm, pagina`.
 - RF16 — Capturar todos os parâmetros `utm_*` da URL.
-- RF17 — Eventos (GA4 `gtag` e Meta `fbq`, se presentes): `quiz_inicio`, `quiz_trilha`, `quiz_pergunta`, `quiz_resultado`, `quiz_whatsapp`, `quiz_compartilhar`.
+- RF17 — Eventos (GA4 `gtag` e Meta `fbq`, se configurados): `quiz_landing`, `quiz_inicio`, `quiz_trilha`, `quiz_pergunta`, `quiz_captura`, `quiz_resultado`, `quiz_whatsapp`, `quiz_compartilhar` + padrão `ViewContent`, `Lead`, `Contact` (Meta) e `generate_lead`, `contact` (GA4).
 
 ## 6. Requisitos de design (escopo do agente de design)
 
@@ -102,9 +102,13 @@ Landing → Caçador/Caçadora → "O que te trouxe até aqui?"
 
 ## 8. Implementação atual (base funcional)
 
-- `app/` — HTML/CSS/JS estático + **SurveyJS Form Library 3.1.1 (MIT)** via CDN (páginas, validação, voltar, transições).
-- Pode trocar a camada visual (ou até o SurveyJS), desde que os RFs e os testes da seção 10 continuem passando.
-- Hospedagem: qualquer estático (Netlify Drop, Vercel, GitHub Pages). Configuração no topo de `app/app.js`: `WEBHOOK_URL`, `PAGINA_CARREIRA_URL`.
+- `app/` — HTML/CSS/JS estático, **sem bibliotecas** (o SurveyJS saiu no redesign v1.1 para a página ficar leve no 4G). Design system da Leadhunter aplicado.
+- `app/motor.js` — a lógica de resultado (porta fiel do `motor.py`). `python3 logica/teste-paridade.py` compara os dois: todas as 1.125 combinações da Carreira + 50.000 da Negócio.
+- **Carta do arquétipo** — componente-assinatura usado na landing, no resultado e nos cards de compartilhamento. Os níveis da carta (Prospecção, Estrutura, Autoridade · Experiência, Currículo, LinkedIn) são calculados das respostas e **não** entram na lógica de resultado.
+- **Cards de compartilhamento** gerados no navegador (canvas): story 1080×1920 e feed 1080×1350. No celular abre o compartilhamento de imagem; no desktop baixa o PNG.
+- **Links por trilha:** `?t=negocio` ou `?t=carreira` pulam a bifurcação e trocam a headline. O `t` vai junto das UTMs para a planilha.
+- **Analytics:** Meta Pixel e GA4 carregam só se configurados. Eventos padrão: `ViewContent` (landing), `Lead`/`generate_lead` (captura enviada), `Contact`/`contact` (clique no WhatsApp), mais os `quiz_*` customizados.
+- Hospedagem: qualquer estático (Netlify Drop, Vercel, GitHub Pages). Configuração no topo de `app/app.js` (ver `app/README.md`).
 
 ## 9. Métricas de sucesso
 
@@ -118,7 +122,7 @@ Landing → Caçador/Caçadora → "O que te trouxe até aqui?"
 
 ## 10. Critérios de aceite
 
-1. `python3 logica/motor.py` → 0 falhas.
+1. `python3 logica/motor.py` → 0 falhas. `python3 logica/teste-paridade.py` → 0 falhas.
 2. Mesmas respostas → mesmo arquétipo no site e no `motor.py` (a versão atual passou em 5.015 combinações).
 3. Percorrer as duas trilhas nas duas versões de gênero até o resultado, sem erro no console.
 4. Caso General: Q1=B, Q2=A, Q3=D, Q4=E, Q5=B, Q6=B, Q7=A, Q8=A, Q9=B, Q10=F → General sem Exército. Trocar Q10 para E → **não** pode ser General nem Refém.
