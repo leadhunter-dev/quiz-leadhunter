@@ -7,7 +7,7 @@ const CONFIG = {
   PAGINA_CARREIRA_URL: "",    // Link da página de conteúdo sobre carreira. Vazio = esconde o link.
   META_PIXEL_ID: "",          // ID do Meta Pixel (Gerenciador de Eventos). Vazio = sem pixel.
   GA4_ID: "",                 // ID do GA4 (G-XXXXXXX). Vazio = sem GA4.
-  URL_PUBLICA: "",            // Endereço que aparece no card (ex.: "leadhunter.com.br/quiz"). Vazio = endereço atual.
+  URL_PUBLICA: "leadhunter-dev.github.io/quiz-leadhunter", // Endereço que aparece no card (ex.: "leadhunter.com.br/quiz"). Vazio = endereço atual.
   INSTAGRAM: "",              // @ da Leadhunter para o texto de compartilhamento (ex.: "@leadhunter"). Vazio = não cita.
   JOSE_FOTO_URL: "",          // Foto do José para a landing (ex.: "assets/jose.jpg"). Vazio = iniciais "JH".
   WHATSAPP: window.QUIZ.config.whatsapp,
@@ -634,11 +634,16 @@ async function desenharCard(formato, res) {
     lc.forEach((l, i) => ctx.fillText(l, W / 2, cy + ch + 110 + i * 60));
     ctx.font = "500 34px 'DM Sans', sans-serif";
     ctx.fillStyle = "rgba(255,255,255,.75)";
-    ctx.fillText("Faça o diagnóstico em 2 minutos → " + urlPublica().replace(/\/$/, ""), W / 2, cy + ch + 110 + lc.length * 60 + 26);
+    const yUrl = cy + ch + 110 + lc.length * 60 + 26;
+    ctx.fillText("Faça o diagnóstico em 2 minutos:", W / 2, yUrl);
+    ctx.fillStyle = "#ffffff";
+    ctx.fillText(urlPublica().replace(/\/$/, ""), W / 2, yUrl + 48);
   } else {
     ctx.textAlign = "center"; ctx.fillStyle = "rgba(255,255,255,.8)";
     ctx.font = "500 34px 'DM Sans', sans-serif";
-    ctx.fillText("E o seu LinkedIn? Diagnóstico em 2 min → " + urlPublica().replace(/\/$/, ""), W / 2, cy + ch + 110);
+    ctx.fillText("E o seu LinkedIn? Diagnóstico em 2 min:", W / 2, cy + ch + 82);
+    ctx.fillStyle = "#ffffff";
+    ctx.fillText(urlPublica().replace(/\/$/, ""), W / 2, cy + ch + 130);
   }
   return cv;
 }
