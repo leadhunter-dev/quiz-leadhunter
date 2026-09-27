@@ -4,51 +4,81 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Que tipo de caçador(a) você é? · Leadhunter</title>
-<meta name="description" content="Quiz de 2 minutos: descubra seu arquétipo e ganhe uma análise do seu LinkedIn feita pelo José Henrique, fundador da Leadhunter.">
+<meta name="description" content="Quiz de 2 minutos: descubra seu arquétipo de caçador(a) e ganhe uma análise completa do seu LinkedIn feita pelo José Henrique, especialista em LinkedIn e fundador da Leadhunter.">
+<meta name="theme-color" content="#0a0d14">
+<meta property="og:type" content="website">
 <meta property="og:title" content="Que tipo de caçador(a) você é?">
-<meta property="og:description" content="Descubra seu arquétipo em 2 minutos. Bônus: análise do seu LinkedIn.">
+<meta property="og:description" content="Descubra seu arquétipo em 2 minutos. Bônus: análise completa do seu LinkedIn.">
+<!-- Ao publicar, troque por URL absoluta (ex.: https://leadhunter.com.br/quiz/og.png) -->
+<meta property="og:image" content="og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
-<!-- SurveyJS Form Library (MIT) — motor do quiz: páginas, validação, progresso e animações -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/survey-core@3.1.1/survey-core.min.css">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&family=Poppins:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <!-- Landing -->
-<section id="landing" class="tela">
+<section id="landing" class="tela tela-dark" aria-labelledby="landingTitulo">
+  <header class="landing-topo anim" style="--d:0">
+    <img src="assets/logo-white.png" alt="Leadhunter" class="logo" width="110" height="40">
+    <span class="pill"><span class="pill-dot"></span>Quiz · 2 minutos</span>
+  </header>
   <div class="landing-inner">
-    <span class="selo anim" style="--d:0">Quiz Leadhunter · 2 minutos</span>
-    <div class="emojis anim" style="--d:1" aria-hidden="true"><span>🏹</span><span>👑</span><span>🕶️</span><span>🚀</span><span>💎</span></div>
-    <h1 class="anim" style="--d:2">Que tipo de caçador(a) você é?</h1>
-    <p class="sub anim" style="--d:3">Perguntas rápidas para descobrir seu arquétipo — e o que está travando seus próximos clientes ou a sua próxima vaga.</p>
-    <div class="bonus anim" style="--d:4">🎁 Bônus: uma análise completa e pessoal do seu LinkedIn, feita pelo José Henrique, especialista em LinkedIn e fundador da Leadhunter.</div>
-    <button id="comecar" class="btn-primario anim" style="--d:5">Descobrir meu arquétipo →</button>
-    <p class="rodape anim" style="--d:6">Sem enrolação. Sem resposta certa. Só seja sincero(a). 😉</p>
+    <div id="leque" class="leque anim" style="--d:1" aria-hidden="true"></div>
+    <h1 id="landingTitulo" class="anim" style="--d:2">Que tipo de caçador(a) <em>você é?</em></h1>
+    <p id="landingSub" class="sub anim" style="--d:3">Perguntas rápidas para descobrir seu arquétipo — e o que está travando seus próximos clientes ou a sua próxima vaga.</p>
+    <button id="comecar" class="btn btn-primario btn-grande anim" style="--d:4" type="button">Descobrir meu arquétipo <span aria-hidden="true">→</span></button>
+    <div class="bonus-jose anim" style="--d:5">
+      <div id="avatarJose" class="avatar-jose" aria-hidden="true">JH</div>
+      <p><strong>Bônus:</strong> uma análise completa e pessoal do seu LinkedIn, feita pelo José Henrique, especialista em LinkedIn e fundador da Leadhunter.</p>
+    </div>
+    <p class="rodape mono anim" style="--d:6">Sem enrolação · Sem resposta certa · Só seja sincero(a)</p>
   </div>
 </section>
 
-<!-- Quiz (SurveyJS) -->
+<!-- Quiz -->
 <section id="quiz" class="tela escondido">
-  <div class="progresso"><div id="progressoBarra"></div></div>
-  <div id="surveyContainer"></div>
+  <header class="quiz-topo">
+    <button id="voltar" class="btn-icone" type="button" aria-label="Voltar para a pergunta anterior">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <span id="passoLabel" class="mono passo-label"></span>
+    <img src="assets/logo-color.png" alt="Leadhunter" class="logo-mini" width="72" height="26">
+  </header>
+  <div id="progresso" class="progresso" role="progressbar" aria-label="Progresso do quiz" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+    <div id="progressoBarra"></div>
+  </div>
+  <main id="etapa" class="etapa"></main>
+</section>
+
+<!-- Metade do caminho -->
+<section id="metade" class="tela tela-dark tela-centro escondido" aria-live="polite">
+  <div class="carta-mini carta-verso pulsando" aria-hidden="true"><span>?</span></div>
+  <p class="mono metade-label">§ Metade do caminho</p>
+  <p class="metade-texto">Seu arquétipo já está tomando forma…</p>
 </section>
 
 <!-- Carregando -->
-<section id="carregando" class="tela escondido">
-  <div class="loader"><div class="anel"></div><div class="anel anel2"></div><span id="loaderEmoji">🎯</span></div>
-  <p id="loaderTexto">Analisando suas respostas…</p>
+<section id="carregando" class="tela tela-dark tela-centro escondido" aria-live="polite">
+  <div class="carta-mini carta-verso girando" aria-hidden="true"><span>?</span></div>
+  <p id="loaderTexto" class="loader-texto">Analisando suas respostas…</p>
 </section>
 
 <!-- Resultado -->
-<section id="resultado" class="tela escondido"><div id="resultadoConteudo" class="resultado-inner"></div></section>
+<section id="resultado" class="tela escondido"></section>
 
-<div id="toast" class="toast"></div>
+<!-- CTA fixo do WhatsApp (aparece no resultado ao rolar) -->
+<div id="barraWpp" class="barra-wpp"></div>
 
-<script src="https://cdn.jsdelivr.net/npm/survey-core@3.1.1/survey.core.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/survey-core@3.1.1/i18n/portuguese-br.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/survey-js-ui@3.1.1/survey-js-ui.min.js"></script>
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+
 <script src="quiz-data.js"></script>
+<script src="motor.js"></script>
 <script src="app.js"></script>
 </body>
 </html>

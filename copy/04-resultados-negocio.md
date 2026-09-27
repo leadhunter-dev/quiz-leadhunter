@@ -152,7 +152,7 @@ O José Henrique vai analisar o seu LinkedIn e te mostrar como transformar a sua
 
 **Botão:** Quero parar de depender da sorte →
 
-**Compartilhamento:** "Deu Refém da Indicação 🎲 — hora de parar de depender da sorte. E você?"
+**Compartilhamento:** "Deu Refém da Indicação 🎲 — meus clientes gostam tanto que me indicam. Agora é não depender só disso. E você?"
 
 ---
 

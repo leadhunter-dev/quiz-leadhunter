@@ -110,3 +110,8 @@ Tudo cai no WhatsApp do José, sem link de pagamento. Para aguentar o volume do 
 - [x] Q10 virou faturamento mensal; corte do Serviço Completo definido (R$ 100 mil+/mês + time mínimo)
 - [ ] Confirmar o número de WhatsApp
 - [ ] Onde registrar os leads (Notion, planilha ou CRM)
+- [ ] Revisar a frase "centenas de reuniões toda semana" (bloco "Por trás deste diagnóstico", `copy/04`) contra os números reais da operação antes de rodar anúncio
+- [ ] Preencher no `app/app.js`: `URL_PUBLICA`, `META_PIXEL_ID`, `GA4_ID`, `INSTAGRAM`, `JOSE_FOTO_URL`, `WEBHOOK_URL`
+- [ ] Trocar `og:image` por URL absoluta ao publicar (`app/index.html`)
+- [ ] Nome do arquétipo Explorador(a) de Outros Mares (avaliar renomear — ver `docs/03-campanhas-e-conteudo.md`)
+- [ ] 20 ilustrações dos arquétipos (hoje a carta usa o emoji dentro de um círculo)

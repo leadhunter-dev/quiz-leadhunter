@@ -7,7 +7,8 @@ quiz-funnel/
 ├── docs/
 │   ├── 01-framework.md            ← estratégia, jornada, arquétipos, motor, métricas, pendências
 │   ├── 02-mapa-mental.html        ← mapa mental visual (abrir no navegador)
-│   └── 02-mapa-mental.mmd         ← mesmo mapa em Mermaid (editável)
+│   ├── 02-mapa-mental.mmd         ← mesmo mapa em Mermaid (editável)
+│   └── 03-campanhas-e-conteudo.md ← Instagram: campanhas pagas, conteúdo orgânico, links e métricas
 ├── copy/
 │   ├── 01-telas-de-entrada-e-captura.md
 │   ├── 02-perguntas-negocio.md
@@ -19,6 +20,7 @@ quiz-funnel/
 ├── logica/
 │   ├── quiz-config.json           ← FONTE DA VERDADE dos pesos e travas
 │   ├── motor.py                   ← calcula o resultado, roda testes, gera a tabela
+│   ├── teste-paridade.py          ← confere se o site dá o mesmo resultado que o motor.py
 │   └── pontuacao.md               ← tabela gerada automaticamente
 ├── handoff/
 │   ├── PRD.md                     ← requisitos completos para o agente de design
@@ -32,5 +34,5 @@ quiz-funnel/
 
 ## Status
 
-- **Quiz funcionando em `app/`** (SurveyJS, visual provisório). Mudou texto em `copy/`? Rode `python3 app/build.py`.
-v0.2 — Trilha Carreira adicionada, ninguém é desqualificado. Pendências em `docs/01-framework.md`, seção 8.
+- **Quiz em `app/` com o design system da Leadhunter** (sem bibliotecas; carta do arquétipo, cards para story/feed, Meta Pixel/GA4 prontos para configurar). Mudou texto em `copy/`? Rode `python3 app/build.py`.
+v1.1 — redesign completo. v0.2 — Trilha Carreira adicionada, ninguém é desqualificado. Pendências em `docs/01-framework.md`, seção 8.

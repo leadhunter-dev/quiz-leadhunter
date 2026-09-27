@@ -610,7 +610,7 @@ window.QUIZ = {
     },
     {
      "valor": "C",
-     "texto": "Lidero o time comercial (gerente, head, coordenador[a])"
+     "texto": "Lidero o time comercial (gerente, head, [coordenador|coordenadora])"
     },
     {
      "valor": "D",
@@ -1018,7 +1018,7 @@ window.QUIZ = {
    "conteudo": "",
    "botao": "Quero parar de depender da sorte",
    "botaoSecundario": "",
-   "compartilhar": "Deu Refém da Indicação 🎲 — hora de parar de depender da sorte. E você?"
+   "compartilhar": "Deu Refém da Indicação 🎲 — meus clientes gostam tanto que me indicam. Agora é não depender só disso. E você?"
   },
   "EXP": {
    "frase": "Seu tesouro está num mapa diferente — e a vitrine vem primeiro.",
