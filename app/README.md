@@ -50,5 +50,5 @@ Preencha o `CONFIG` no topo do `app.js`:
 
 Depois:
 1. Em `index.html`, troque `og:image` por URL absoluta (ex.: `https://leadhunter.com.br/quiz/og.png`).
-2. Publique a pasta `app/` (Netlify Drop, Vercel ou GitHub Pages).
+2. Publicação: o workflow `.github/workflows/pages.yml` publica a pasta `app/` no GitHub Pages a cada push no `main` (ativar uma vez em Settings → Pages → Source: "GitHub Actions"). Endereço: `https://leadhunter-dev.github.io/quiz-leadhunter/`.
 3. Teste o link no WhatsApp para ver a prévia com a imagem.
