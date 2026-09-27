@@ -109,9 +109,9 @@ Tudo cai no WhatsApp do José, sem link de pagamento. Para aguentar o volume do 
 - [ ] Calibrar faixas de ticket (Q3)
 - [x] Q10 virou faturamento mensal; corte do Serviço Completo definido (R$ 100 mil+/mês + time mínimo)
 - [ ] Confirmar o número de WhatsApp
-- [ ] Onde registrar os leads (Notion, planilha ou CRM)
+- [x] Leads salvos na Planilha Google (aba "Leads") via Apps Script — `WEBHOOK_URL` configurada e testada
 - [ ] Revisar a frase "centenas de reuniões toda semana" (bloco "Por trás deste diagnóstico", `copy/04`) contra os números reais da operação antes de rodar anúncio
-- [ ] Preencher no `app/app.js`: `URL_PUBLICA`, `META_PIXEL_ID`, `GA4_ID`, `INSTAGRAM`, `JOSE_FOTO_URL`, `WEBHOOK_URL`
+- [ ] Preencher no `app/app.js`: `URL_PUBLICA`, `META_PIXEL_ID`, `GA4_ID`, `INSTAGRAM`, `JOSE_FOTO_URL`
 - [ ] Trocar `og:image` por URL absoluta ao publicar (`app/index.html`)
 - [ ] Nome do arquétipo Explorador(a) de Outros Mares (avaliar renomear — ver `docs/03-campanhas-e-conteudo.md`)
 - [x] Arte dos arquétipos: emblemas de mira + ícones Lucide (v1.2). Ilustrações com personagem são opcionais — ver `docs/04-ilustracoes-arquetipos.md`
