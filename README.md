@@ -20,8 +20,9 @@ quiz-funnel/
 │   ├── quiz-config.json           ← FONTE DA VERDADE dos pesos e travas
 │   ├── motor.py                   ← calcula o resultado, roda testes, gera a tabela
 │   └── pontuacao.md               ← tabela gerada automaticamente
-└── handoff/
-    └── brief-design.md            ← instruções para o agente de design (passo 2)
+├── handoff/
+│   └── brief-design.md            ← instruções para o agente de design (passo 2)
+└── app/                           ← QUIZ FUNCIONANDO (abrir app/index.html) — ver app/README.md
 ```
 
 ## Convenções
@@ -29,4 +30,6 @@ quiz-funnel/
 - Mudou um peso? Edite `quiz-config.json` e rode `python3 logica/motor.py` para testar e regenerar a tabela.
 
 ## Status
+
+- **Quiz funcionando em `app/`** (SurveyJS, visual provisório). Mudou texto em `copy/`? Rode `python3 app/build.py`.
 v0.2 — Trilha Carreira adicionada, ninguém é desqualificado. Pendências em `docs/01-framework.md`, seção 8.

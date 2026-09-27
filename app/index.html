@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Que tipo de caçador(a) você é? · Leadhunter</title>
+<meta name="description" content="Quiz de 2 minutos: descubra seu arquétipo e ganhe uma análise do seu LinkedIn feita pelo José Henrique, fundador da Leadhunter.">
+<meta property="og:title" content="Que tipo de caçador(a) você é?">
+<meta property="og:description" content="Descubra seu arquétipo em 2 minutos. Bônus: análise do seu LinkedIn.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+<!-- SurveyJS Form Library (MIT) — motor do quiz: páginas, validação, progresso e animações -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/survey-core@3.1.1/survey-core.min.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Landing -->
+<section id="landing" class="tela">
+  <div class="landing-inner">
+    <span class="selo anim" style="--d:0">Quiz Leadhunter · 2 minutos</span>
+    <div class="emojis anim" style="--d:1" aria-hidden="true"><span>🏹</span><span>👑</span><span>🕶️</span><span>🚀</span><span>💎</span></div>
+    <h1 class="anim" style="--d:2">Que tipo de caçador(a) você é?</h1>
+    <p class="sub anim" style="--d:3">Perguntas rápidas para descobrir seu arquétipo — e o que está travando seus próximos clientes ou a sua próxima vaga.</p>
+    <div class="bonus anim" style="--d:4">🎁 Você ainda ganha uma análise do seu LinkedIn feita pessoalmente pelo José Henrique, fundador da Leadhunter.</div>
+    <button id="comecar" class="btn-primario anim" style="--d:5">Descobrir meu arquétipo →</button>
+    <p class="rodape anim" style="--d:6">Sem enrolação. Sem resposta certa. Só seja sincero(a). 😉</p>
+  </div>
+</section>
+
+<!-- Quiz (SurveyJS) -->
+<section id="quiz" class="tela escondido">
+  <div class="progresso"><div id="progressoBarra"></div></div>
+  <div id="surveyContainer"></div>
+</section>
+
+<!-- Carregando -->
+<section id="carregando" class="tela escondido">
+  <div class="loader"><div class="anel"></div><div class="anel anel2"></div><span id="loaderEmoji">🎯</span></div>
+  <p id="loaderTexto">Analisando suas respostas…</p>
+</section>
+
+<!-- Resultado -->
+<section id="resultado" class="tela escondido"><div id="resultadoConteudo" class="resultado-inner"></div></section>
+
+<div id="toast" class="toast"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/survey-core@3.1.1/survey.core.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/survey-core@3.1.1/i18n/portuguese-br.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/survey-js-ui@3.1.1/survey-js-ui.min.js"></script>
+<script src="quiz-data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
