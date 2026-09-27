@@ -3,7 +3,7 @@
  * Configure o bloco abaixo e publique a pasta app/ em qualquer hospedagem estática.
  */
 const CONFIG = {
-  WEBHOOK_URL: "",            // URL do Google Apps Script (ver planilha-google-apps-script.js). Vazio = não salva os leads.
+  WEBHOOK_URL: "https://script.google.com/macros/s/AKfycbwIDVswe3EkKqOHn9uHhQR1J6-L8TV5DqOVOHSx12mMNIY4EqOAZ-Oq3p_M2RJBEyQ/exec", // URL do Google Apps Script (ver planilha-google-apps-script.js). Vazio = não salva os leads.
   PAGINA_CARREIRA_URL: "",    // Link da página de conteúdo sobre carreira. Vazio = esconde o link.
   META_PIXEL_ID: "",          // ID do Meta Pixel (Gerenciador de Eventos). Vazio = sem pixel.
   GA4_ID: "",                 // ID do GA4 (G-XXXXXXX). Vazio = sem GA4.
