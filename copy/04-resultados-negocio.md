@@ -198,6 +198,27 @@ O José Henrique vai abrir o seu perfil e te mandar no WhatsApp o que ele mudari
 
 ---
 
+## Bloco condicional — 🔗 Sem LinkedIn na captura
+
+> Aparece na Trilha Negócio quando a pessoa deixou o LinkedIn em branco. Substitui o Bônus.
+
+**Título:** Faltou o seu LinkedIn
+
+**Texto:** Sem link, sem análise. Mande o link do seu perfil na conversa com o José e ele te devolve a análise completa e pessoal do seu LinkedIn.
+
+---
+
+## Bloco fixo — Por trás deste diagnóstico
+
+> Aparece em todos os resultados (Negócio e Carreira), logo depois do botão de WhatsApp. Tom sóbrio: é assinatura, não anúncio.
+> ⚠️ Números informados pelo José (set/2026). Revisar se a operação mudar.
+
+**Título:** Por trás deste diagnóstico
+
+**Texto:** O método por trás deste quiz foi validado por José Henrique Mota, especialista em LinkedIn e vendas B2B, com grandes contratos enterprise fechados na carreira. É o mesmo método que a Leadhunter opera hoje para os clientes: **mais de 14 mil convites de conexão personalizados por mês** e **centenas de reuniões toda semana**.
+
+---
+
 ## Bloco condicional — 🚀 Convite para a Trilha Carreira
 
 > Aparece quando Q1 = E (vendedor/SDR). Entra depois do CTA principal, como botão secundário.

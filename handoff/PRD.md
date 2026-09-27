@@ -36,7 +36,7 @@ A Leadhunter vende três coisas para públicos diferentes e hoje não tem um fil
 
 ```
 Landing → Caçador/Caçadora → "O que te trouxe até aqui?"
-  ├─ Negócio:  Q1…Q10 → Captura (LinkedIn obrigatório) ─┐
+  ├─ Negócio:  Q1…Q10 → Captura (LinkedIn opcional)   ─┐
   └─ Carreira: C1…C5  → Captura (LinkedIn opcional)   ──┴→ Carregamento (~3 s) → Resultado → WhatsApp
 ```
 
@@ -62,11 +62,11 @@ Landing → Caçador/Caçadora → "O que te trouxe até aqui?"
 - RF4 — Só aparecem as perguntas da trilha escolhida.
 
 ### 5.3 Captura
-- RF5 — Campos: nome (obrigatório) · WhatsApp com DDD (obrigatório, 10–13 dígitos) · e-mail (obrigatório, válido) · LinkedIn (**obrigatório na Negócio**, opcional na Carreira; deve conter `linkedin.com/`) · consentimento LGPD (obrigatório).
+- RF5 — Campos: nome (obrigatório) · WhatsApp com DDD (obrigatório, 10–13 dígitos) · e-mail (obrigatório, válido) · LinkedIn (opcional nas duas trilhas; se preenchido, deve conter `linkedin.com/`). Na Negócio, o microcopy reforça: sem link, sem análise · consentimento LGPD (obrigatório).
 - RF6 — A captura vem **antes** do resultado.
 
 ### 5.4 Resultado
-- RF7 — Ordem: "[Nome], seu arquétipo é" · avatar/emoji animado · nome do arquétipo · frase de efeito · Quem é você · Superpoder · Ponto cego · Se nada mudar · [Alerta de autoridade, se aplicável] · Bloco da oferta (título, texto, bônus, link de conteúdo na Carreira) · **Botão WhatsApp** · [Convite Trilha Carreira, se aplicável] · Compartilhar · Refazer.
+- RF7 — Ordem: "[Nome], seu arquétipo é" · avatar/emoji animado · nome do arquétipo · frase de efeito · Quem é você · Superpoder · Ponto cego · Se nada mudar · [Alerta de autoridade, se aplicável] · Bloco da oferta (título, texto, bônus, link de conteúdo na Carreira) · [Aviso "sem LinkedIn", se a Negócio veio sem link] · **Botão WhatsApp** · Por trás deste diagnóstico (prova da Leadhunter, as duas trilhas) · [Convite Trilha Carreira, se aplicável] · Compartilhar · Refazer.
 - RF8 — **Alerta de autoridade:** aparece em Caçador(a), Maestro/Maestra, General/Rainha e Refém quando a nota de autoridade (Q7+Q8) ≤ 2.
 - RF9 — **Convite para a Trilha Carreira:** aparece quando Q1 = E (vendedor/SDR). Ao clicar, reinicia na C1 mantendo gênero e dados da captura.
 - RF10 — **Botão WhatsApp:** `https://wa.me/5521969353524?text=<mensagem>` com a mensagem do arquétipo (`copy/06`, seção 1) na forma do gênero e com o primeiro nome inserido ("Oi José! Aqui é Ana. Fiz o quiz…"). Abre em nova aba.

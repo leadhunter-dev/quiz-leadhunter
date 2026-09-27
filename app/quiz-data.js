@@ -1096,6 +1096,14 @@ window.QUIZ = {
    "titulo": "Um alerta antes de você acelerar",
    "texto": "Pelas suas respostas, o seu LinkedIn ainda não sustenta a sua abordagem. Na prática, isso significa que cada convite e cada mensagem vai converter menos, porque o decisor abre o seu perfil e não encontra motivo para responder. Antes de colocar volume, vale ajustar a vitrine. A análise que o José vai te mandar começa exatamente por aqui."
   },
+  "semLinkedin": {
+   "titulo": "Faltou o seu LinkedIn",
+   "texto": "Sem link, sem análise. Mande o link do seu perfil na conversa com o José e ele te devolve a análise completa e pessoal do seu LinkedIn."
+  },
+  "prova": {
+   "titulo": "Por trás deste diagnóstico",
+   "texto": "O método por trás deste quiz foi validado por José Henrique Mota, especialista em LinkedIn e vendas B2B, com grandes contratos enterprise fechados na carreira. É o mesmo método que a Leadhunter opera hoje para os clientes: **mais de 14 mil convites de conexão personalizados por mês** e **centenas de reuniões toda semana**."
+  },
   "convite": {
    "titulo": "E a sua carreira?",
    "texto": "Você respondeu como quem está na linha de frente. Quer descobrir também o seu arquétipo de carreira? São 5 perguntas.",

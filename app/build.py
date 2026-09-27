@@ -78,6 +78,10 @@ def resultados():
                 }
             elif "Alerta de autoridade" in tit:
                 extras["alerta"] = {"titulo": c.get("Título", ""), "texto": c.get("Texto", "")}
+            elif "Sem LinkedIn na captura" in tit:
+                extras["semLinkedin"] = {"titulo": c.get("Título", ""), "texto": c.get("Texto", "")}
+            elif "Por trás deste diagnóstico" in tit:
+                extras["prova"] = {"titulo": c.get("Título", ""), "texto": c.get("Texto", "")}
             elif "Convite para a Trilha Carreira" in tit:
                 extras["convite"] = {"titulo": c.get("Título", ""), "texto": c.get("Texto", ""),
                                      "botao": c.get("Botão secundário", "").rstrip(" →")}

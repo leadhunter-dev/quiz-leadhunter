@@ -129,10 +129,11 @@ const json = {
         validators: [{ type: "regex", regex: "^[\\s()+\\-.]*(\\d[\\s()+\\-.]*){10,13}$", text: "Confere o número com DDD 🙂" }] },
       { type: "text", name: "email", title: "E-mail", inputType: "email", isRequired: true, placeholder: "voce@empresa.com.br",
         validators: [{ type: "email", text: "Esse e-mail parece incompleto." }] },
-      { type: "text", name: "linkedin", title: "Link do seu perfil no LinkedIn", requiredIf: "{trilha} = 'A'",
+      { type: "text", name: "linkedin", title: "Link do seu perfil no LinkedIn (opcional)",
         placeholder: "linkedin.com/in/seu-perfil",
-        description: "É por aqui que o José faz a sua análise.",
         validators: [{ type: "regex", regex: "linkedin\\.com\\/", text: "Cole o link do seu perfil (linkedin.com/in/…)" }] },
+      { type: "html", name: "li_negocio", visibleIf: "{trilha} = 'A'",
+        html: "<p class='cap-micro'>Opcional, mas é ele que libera o seu bônus: o José Henrique, especialista em LinkedIn e fundador da Leadhunter, abre o seu perfil e te manda uma análise completa e pessoal. <strong>Sem link, sem análise.</strong></p>" },
       { type: "html", name: "sem_linkedin", visibleIf: "{trilha} = 'B'",
         html: "<p class='cap-micro'>Não tem LinkedIn? Sem problema, deixa em branco — a gente começa do zero.</p>" },
       { type: "checkbox", name: "consentimento", titleLocation: "hidden", isRequired: true,
@@ -251,6 +252,7 @@ function renderResultado(res, d) {
   const linkWpp = `https://wa.me/${CONFIG.WHATSAPP}?text=${encodeURIComponent(msg)}`;
 
   const [conteudoTexto] = (t.conteudo || "").split(" → ");
+  const semLinkedin = res.trilha === "NEGOCIO" && !(d.linkedin || "").trim();
   const bloco = (titulo, texto, cls = "") =>
     texto ? `<div class="bloco ${cls} anim"><h3>${titulo}</h3><p>${fmt(texto)}</p></div>` : "";
 
@@ -272,7 +274,8 @@ function renderResultado(res, d) {
       <span class="tag">O caminho que a gente recomenda</span>
       <h2>${esc(t.ofertaTitulo)}</h2>
       <p>${fmt(t.oferta)}</p>
-      ${t.bonus ? `<p class="bonus-res">🎁 ${fmt(t.bonus)}</p>` : ""}
+      ${semLinkedin ? `<p class="bonus-res">🔗 <strong>${esc(Q.extras.semLinkedin.titulo)}.</strong> ${fmt(Q.extras.semLinkedin.texto)}</p>`
+        : t.bonus ? `<p class="bonus-res">🎁 ${fmt(t.bonus)}</p>` : ""}
       ${conteudoTexto && CONFIG.PAGINA_CARREIRA_URL ? `<p class="conteudo">📚 <a href="${CONFIG.PAGINA_CARREIRA_URL}" target="_blank" rel="noopener">${fmt(conteudoTexto)} →</a></p>` : ""}
       <a class="btn-wpp" href="${linkWpp}" target="_blank" rel="noopener" id="ctaWpp">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2s.2-1.1.2-1.2-.2-.2-.4-.3z"/></svg>
@@ -280,6 +283,7 @@ function renderResultado(res, d) {
       </a>
       <p class="wpp-micro">Abre o WhatsApp do José com a mensagem pronta.</p>
     </div>
+    <div class="bloco prova anim"><h3>${esc(Q.extras.prova.titulo)}</h3><p>${fmt(Q.extras.prova.texto)}</p></div>
     ${res.conviteCarreira ? `<div class="bloco convite anim"><h3>🚀 ${esc(Q.extras.convite.titulo)}</h3><p>${fmt(Q.extras.convite.texto)}</p>
       <button class="btn-secundario" id="btnCarreira">${esc(Q.extras.convite.botao)} →</button></div>` : ""}
     <div class="compartilhar anim">

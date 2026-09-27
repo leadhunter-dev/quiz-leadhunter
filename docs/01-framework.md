@@ -19,7 +19,7 @@
 
 ```
 Tráfego → Landing → Caçador ou Caçadora? → O que te trouxe até aqui?
-   ├─ Negócio  → 10 perguntas → Captura (LinkedIn obrigatório) → Resultado → WhatsApp → análise do perfil (48h úteis) → call → proposta
+   ├─ Negócio  → 10 perguntas → Captura (LinkedIn opcional)    → Resultado → WhatsApp → análise do perfil (48h úteis) → call → proposta
    └─ Carreira →  5 perguntas → Captura (LinkedIn opcional)    → Resultado → WhatsApp → lead manda currículo → 2 ajustes → oferta
 ```
 

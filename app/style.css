@@ -108,6 +108,9 @@ h1 { font-size: clamp(30px, 7vw, 46px); line-height: 1.08; letter-spacing: -.02e
 @keyframes pulsa { 0%,100% { box-shadow: 0 10px 24px rgba(37,211,102,.35), 0 0 0 0 rgba(37,211,102,.45) } 60% { box-shadow: 0 10px 24px rgba(37,211,102,.35), 0 0 0 14px rgba(37,211,102,0) } }
 .wpp-micro { text-align: center; font-size: 13px !important; color: var(--suave); margin-top: 8px !important; }
 .convite { background: #f6f2ff; border-color: #d9ccff; }
+.prova { background: var(--tinta); border-color: var(--tinta); color: #fff; }
+.prova h3 { font-size: 12px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: #aab4d4; }
+.prova strong { color: #fff; }
 .btn-secundario { font: inherit; font-weight: 600; background: #fff; border: 2px solid var(--borda); color: var(--tinta); border-radius: 999px; padding: 12px 20px; cursor: pointer; margin-top: 12px; transition: border-color .15s; }
 .btn-secundario:hover { border-color: var(--azul); }
 .btn-link { font: inherit; background: none; border: 0; color: var(--suave); text-decoration: underline; cursor: pointer; padding: 12px; }
